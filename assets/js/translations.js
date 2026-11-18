@@ -218,7 +218,23 @@ window.SEALWHARF_TRANSLATIONS = {
     "foot.example": "Exemplo de configuração",
     "foot.issues": "Relatar um problema",
     "foot.page": "Nesta página",
-    "foot.built": "Feito com Python, pyHanko e Docker."
+    "foot.built": "Feito com Python, pyHanko e Docker.",
+
+    "motion.online": "online",
+    "motion.typing": "digitando…",
+    "route.label":
+      "Caminho das mensagens: seu celular, o Whapi e um túnel da Cloudflare transportam as mensagens; os certificados e a assinatura ficam no seu computador.",
+    "route.transit": "só de passagem",
+    "route.phone": "Seu celular",
+    "route.gateway": "mensagens",
+    "route.tunnel": "túnel",
+    "route.signs": "assina aqui",
+    "route.computer": "Seu computador",
+    "route.certs": "Certificados",
+    "route.token": "Token USB",
+    "route.audit": "Registro de auditoria",
+    "roles.approved": "Aprovado! O documento foi assinado.",
+    "roles.timer": "Uso único, expira em 5 minutos"
   },
 
   es: {
@@ -428,6 +444,21 @@ window.SEALWHARF_TRANSLATIONS = {
     "foot.example": "Ejemplo de configuración",
     "foot.issues": "Informar un problema",
     "foot.page": "En esta página",
-    "foot.built": "Hecho con Python, pyHanko y Docker."
+    "foot.built": "Hecho con Python, pyHanko y Docker.",
+
+    "motion.online": "en línea",
+    "motion.typing": "escribiendo…",
+    "route.label":
+      "Camino de los mensajes: su celular, Whapi y un túnel de Cloudflare transportan los mensajes; los certificados y la firma se quedan en su computadora.",
+    "route.transit": "solo de paso",
+    "route.phone": "Su celular",
+    "route.gateway": "mensajes",
+    "route.tunnel": "túnel",
+    "route.signs": "firma aquí",
+    "route.computer": "Su computadora",
+    "route.certs": "Certificados",
+    "route.token": "Token USB",
+    "route.audit": "Registro de auditoría",
+    "roles.timer": "Uso único, vence en 5 minutos"
   }
 };

@@ -21,11 +21,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/motion.css" />
     <script src="assets/js/translations.js" defer></script>
     <script src="assets/js/i18n.js" defer></script>
     <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/motion.js" defer></script>
   </head>
   <body>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <symbol id="m-seal" viewBox="0 0 40 40">
+          <polygon data-rosette="20,20,18,15.4,12" fill="#0e8a7c" stroke="#0e8a7c" stroke-width="3" stroke-linejoin="round" />
+          <path d="M13 20.5l4.6 4.6 9.4-9.6" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
+      </defs>
+    </svg>
+
     <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
 
     <header class="site-header" id="top">
@@ -64,15 +75,52 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-seal" aria-hidden="true"></div>
         <div class="container hero-inner">
-          <p class="eyebrow eyebrow--accent" data-i18n="hero.badge">Open source · Self-hosted · Runs in Docker</p>
-          <h1 class="hero-title" id="hero-title" data-i18n="hero.title">Sign documents by sending them to a WhatsApp number</h1>
-          <p class="hero-subtitle" data-i18n="hero.subtitle">
-            Send a PDF or Word document to the bot and get it back digitally signed, a few seconds later. Sealwharf runs on your own computer, so your certificates and documents never leave it.
-          </p>
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="https://github.com/mauricioeluri/sealwharf" target="_blank" rel="noopener" data-i18n="hero.ctaGithub">View on GitHub</a>
-            <a class="btn btn-outline" href="#how" data-i18n="hero.ctaHow">See how it works</a>
-            <a class="btn btn-outline" href="#start" data-i18n="hero.ctaStart">Set it up in five steps</a>
+          <div class="hero-main">
+            <div class="hero-copy">
+              <p class="eyebrow eyebrow--accent" data-i18n="hero.badge">Open source · Self-hosted · Runs in Docker</p>
+              <h1 class="hero-title" id="hero-title" data-i18n="hero.title">Sign documents by sending them to a WhatsApp number</h1>
+              <p class="hero-subtitle" data-i18n="hero.subtitle">
+                Send a PDF or Word document to the bot and get it back digitally signed, a few seconds later. Sealwharf runs on your own computer, so your certificates and documents never leave it.
+              </p>
+              <div class="hero-cta">
+                <a class="btn btn-primary" href="https://github.com/mauricioeluri/sealwharf" target="_blank" rel="noopener" data-i18n="hero.ctaGithub">View on GitHub</a>
+                <a class="btn btn-outline" href="#how" data-i18n="hero.ctaHow">See how it works</a>
+                <a class="btn btn-outline" href="#start" data-i18n="hero.ctaStart">Set it up in five steps</a>
+              </div>
+            </div>
+
+            <div class="m-hero-visual" aria-hidden="true">
+              <div class="m-halo"></div>
+              <div class="m-phone">
+                <div class="m-notch"></div>
+                <div class="m-chat-head">
+                  <img class="m-avatar" src="assets/img/logo.webp" alt="" width="36" height="36" />
+                  <div>
+                    <strong>Sealwharf</strong>
+                    <small class="m-status" id="m-status"><span class="m-on" data-i18n="motion.online">online</span><span class="m-typing-label" data-i18n="motion.typing">typing…</span></small>
+                  </div>
+                </div>
+                <div class="m-chat" id="m-chat">
+                  <div class="m-msg m-out" data-step="send">
+                    <span class="bubble-file">contract.pdf</span>
+                    <time>14:31 <span class="m-ticks">✓✓</span></time>
+                  </div>
+                  <div class="m-msg m-in m-typing" data-step="typing"><i></i><i></i><i></i></div>
+                  <div class="m-msg m-in" data-step="got">
+                    <span data-i18n="how.msgGot">Got it! Working on your document...</span>
+                    <time>14:31</time>
+                  </div>
+                  <div class="m-msg m-in m-typing" data-step="typing"><i></i><i></i><i></i></div>
+                  <div class="m-msg m-in" data-step="done">
+                    <span class="bubble-file">contract.pdf<svg class="m-badge"><use href="#m-seal" /></svg></span>
+                    <span data-i18n="how.msgDone">All set! Signed by: John Doe.</span>
+                    <time>14:32</time>
+                  </div>
+                </div>
+                <div class="m-input"><span></span><i></i></div>
+              </div>
+              <div class="m-float-seal"><svg><use href="#m-seal" /></svg></div>
+            </div>
           </div>
           <dl class="hero-stats">
             <div class="stat">
@@ -97,12 +145,49 @@
 
       <!-- Claim -->
       <section class="section--claim" aria-labelledby="claim-title">
-        <div class="container">
-          <p class="eyebrow eyebrow--accent" data-i18n="claim.eyebrow">The idea</p>
-          <h2 class="claim-title" id="claim-title" data-i18n="claim.title">Your certificate stays home. Only the messages travel.</h2>
-          <p class="claim-body" data-i18n="claim.body">
-            Signing portals ask you to upload the document, and sometimes the certificate. Sealwharf turns this around: the signing happens in a container on your computer, and WhatsApp is only the way documents come in and go out. Whapi carries the messages and a Cloudflare tunnel gives the bot a fixed address; neither of them ever sees a certificate or a password.
-          </p>
+        <div class="container m-claim-grid">
+          <div class="m-reveal">
+            <p class="eyebrow eyebrow--accent" data-i18n="claim.eyebrow">The idea</p>
+            <h2 class="claim-title" id="claim-title" data-i18n="claim.title">Your certificate stays home. Only the messages travel.</h2>
+            <p class="claim-body" data-i18n="claim.body">
+              Signing portals ask you to upload the document, and sometimes the certificate. Sealwharf turns this around: the signing happens in a container on your computer, and WhatsApp is only the way documents come in and go out. Whapi carries the messages and a Cloudflare tunnel gives the bot a fixed address; neither of them ever sees a certificate or a password.
+            </p>
+          </div>
+
+          <figure class="m-route m-reveal" role="img" aria-label="Message path: your phone, Whapi.Cloud and a Cloudflare tunnel carry the messages; the certificates and the signing stay on your computer." data-i18n="route.label" data-i18n-attr="aria-label">
+            <div class="m-transit">
+              <span class="m-tag" data-i18n="route.transit">in transit only</span>
+              <div class="m-node">
+                <svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3" /><path d="M10.5 18.5h3" /></svg>
+                <b data-i18n="route.phone">Your phone</b><small>WhatsApp</small>
+              </div>
+              <div class="m-wire"><i></i></div>
+              <div class="m-node">
+                <svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z" /></svg>
+                <b>Whapi</b><small data-i18n="route.gateway">messages</small>
+              </div>
+              <div class="m-wire"><i></i></div>
+              <div class="m-node">
+                <svg viewBox="0 0 24 24"><path d="M7 18a5 5 0 0 1-.6-9.96A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9H7z" /></svg>
+                <b>Cloudflare</b><small data-i18n="route.tunnel">tunnel</small>
+              </div>
+            </div>
+            <div class="m-wire m-wire--down"><i></i></div>
+            <div class="m-vault">
+              <span class="m-tag m-tag--strong" data-i18n="route.signs">signs here</span>
+              <div class="m-vault-head">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8M12 16v4" /></svg>
+                <span data-i18n="route.computer">Your computer</span>
+                <span class="m-pill">Docker</span>
+              </div>
+              <ul>
+                <li><img src="assets/img/logo.webp" alt="" width="22" height="22" loading="lazy" />Sealwharf</li>
+                <li><span class="m-glyph">.p12</span><span data-i18n="route.certs">Certificates</span></li>
+                <li><span class="m-glyph">A3</span><span data-i18n="route.token">USB token</span></li>
+                <li><span class="m-glyph">≡</span><span data-i18n="route.audit">Audit record</span></li>
+              </ul>
+            </div>
+          </figure>
         </div>
       </section>
 
@@ -298,15 +383,28 @@
           </div>
 
           <div class="roles-split">
-            <figure class="approval">
-              <ul class="chat">
-                <li class="bubble bubble--in">
+            <figure class="m-approve" id="m-approve">
+              <div class="m-approve-card">
+                <div class="m-approve-top">
+                  <img class="m-avatar" src="assets/img/logo.webp" alt="" width="32" height="32" loading="lazy" />
+                  Sealwharf
+                </div>
+                <div class="m-bubble m-in m-step">
                   <span class="bubble-file">report.pdf</span>
                   <span data-i18n="roles.msg">Hello! Jane Doe (+55 21 88888-8888) asks you to sign the following document with your digital certificate. Reply 1 to approve. Reply 0, or simply ignore this message, to refuse.</span>
-                  <span class="bubble-meta">09:12</span>
-                </li>
-                <li class="bubble bubble--out">1<span class="bubble-meta">09:13</span></li>
-              </ul>
+                  <time>09:12</time>
+                </div>
+                <div class="m-bubble m-out m-step"><span class="m-big">1</span><time>09:13</time></div>
+                <div class="m-bubble m-in m-ok m-step">
+                  <svg class="m-mini-seal" aria-hidden="true"><use href="#m-seal" /></svg>
+                  <span data-i18n="roles.approved">Approved! The document was signed.</span>
+                  <time>09:13</time>
+                </div>
+              </div>
+              <div class="m-timer" aria-hidden="true">
+                <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" /><circle class="m-t" cx="18" cy="18" r="15" pathLength="1" /></svg>
+                <span data-i18n="roles.timer">Single use, expires in 5 minutes</span>
+              </div>
               <figcaption data-i18n="roles.cap">What the owner receives when a preparer asks for a signature.</figcaption>
             </figure>
 
@@ -456,11 +554,30 @@ certificates:
           <p class="section-lead" data-i18n="use.lead">For the bot to find where to sign, the document needs the signer's full name next to an empty signature line.</p>
 
           <div class="use-split">
-            <div class="paper">
-              <div class="doc-line doc-line--title"></div>
-              <div class="doc-line"></div>
-              <div class="doc-line doc-line--short"></div>
-              <div class="sigline">José Gonçalves</div>
+            <div class="m-paper-stage">
+              <div class="m-paper" id="m-paper">
+                <div class="m-scan" aria-hidden="true"></div>
+                <div class="doc-line doc-line--title"></div>
+                <div class="doc-line"></div>
+                <div class="doc-line"></div>
+                <div class="doc-line"></div>
+                <div class="doc-line doc-line--short"></div>
+                <div class="m-sig-row">
+                  <div class="m-sig m-sig--target">
+                    <svg class="m-hand" viewBox="0 0 200 60" aria-hidden="true">
+                      <path pathLength="1" d="M8 44 C 18 18, 32 8, 35 22 C 38 36, 24 50, 21 45 C 17 38, 40 22, 53 29 C 61 34, 54 46, 63 42 C 71 38, 73 27, 81 31 C 87 35, 84 44, 93 40 C 105 34, 113 25, 125 29 C 133 32, 129 42, 139 38 C 152 33, 171 28, 194 24" />
+                    </svg>
+                    <div class="stamp" aria-hidden="true">
+                      <img src="assets/img/logo.webp" alt="" width="26" height="26" loading="lazy" />
+                      <span>Digitally signed by<br />JOSE GONCALVES<br />Date: 2026.11.18</span>
+                    </div>
+                    <div class="sigline"><span class="m-sig-name">José Gonçalves</span></div>
+                  </div>
+                  <div class="m-sig m-sig--other">
+                    <div class="sigline">Ana Lima</div>
+                  </div>
+                </div>
+              </div>
               <p class="paper-note" data-i18n="use.note">José Gonçalves, Jose Goncalves and JOSE GONCALVES are the same name for the bot, so a document typed without accents is signed just the same.</p>
             </div>
 
