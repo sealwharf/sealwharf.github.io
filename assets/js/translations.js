@@ -20,7 +20,6 @@ window.SEALWHARF_TRANSLATIONS = {
     "nav.start": "Primeiros passos",
     "nav.langLabel": "Idioma",
 
-    "hero.badge": "Código aberto · Hospedagem própria · Roda em Docker",
     "hero.title": "Assine documentos com uma mensagem de WhatsApp",
     "hero.subtitle":
       "Envie um documento PDF ou Word ao robô e receba-o de volta assinado digitalmente, poucos segundos depois. O Sealwharf roda no seu próprio computador, então seus certificados e documentos nunca saem dele.",
@@ -33,18 +32,11 @@ window.SEALWHARF_TRANSLATIONS = {
     "hero.stat3": "basta para o titular aprovar o pedido de outra pessoa",
     "hero.stat4": "certificados ou senhas aceitos pelo chat",
 
-    "claim.eyebrow": "A ideia",
     "claim.title": "Seu certificado fica em casa. Só as mensagens viajam.",
     "claim.body":
       "Os portais de assinatura pedem que você envie o documento e, às vezes, o próprio certificado. O Sealwharf inverte essa lógica: a assinatura acontece em um contêiner no seu computador, e o WhatsApp é apenas o caminho por onde os documentos entram e saem. O Whapi transporta as mensagens e um túnel da Cloudflare dá ao robô um endereço fixo; nenhum dos dois vê um certificado ou uma senha.",
 
-    "about.eyebrow": "O que é",
     "about.title": "Uma mesa de assinaturas dentro da sua conversa",
-    "about.p1":
-      "Assinar um PDF com certificado digital costuma exigir um programa no computador, um token USB conectado à máquina certa e alguns minutos de cliques para posicionar a assinatura. Quando o documento chega pelo celular, ele precisa antes ir até esse computador.",
-    "about.p2":
-      "O Sealwharf é um pequeno robô que você mesmo executa. Encaminhe o documento para o número dele: o robô encontra onde assinar procurando o nome do signatário junto a uma linha de assinatura vazia, assina com o certificado certo e devolve o PDF. Quando o certificado pertence a outra pessoa, ela aprova com uma única resposta.",
-    "about.casesTitle": "Para quem é",
     "about.case1Title": "Profissionais que assinam todo dia",
     "about.case1Body":
       "Contratos, laudos e formulários chegam pelo celular. Encaminhe-os ao robô e receba-os assinados, sem abrir nenhum programa de assinatura.",
@@ -55,7 +47,6 @@ window.SEALWHARF_TRANSLATIONS = {
     "about.case3Body":
       "Cada assinatura é registrada com o horário, quem pediu, quem aprovou e a impressão digital do documento, em um arquivo que fica com você.",
 
-    "how.eyebrow": "Como funciona",
     "how.title": "Da mensagem no chat ao PDF assinado",
     "how.lead": "Tudo o que acontece entre receber o arquivo e devolvê-lo fica dentro do contêiner, no seu computador.",
     "how.tagIn": "Você envia",
@@ -74,20 +65,6 @@ window.SEALWHARF_TRANSLATIONS = {
     "how.prop2": "Carimbo visível",
     "how.prop3": "Assinaturas anteriores mantidas",
     "how.cap": "O robô também confere assinaturas sem assinar: envie a palavra verificar e, em seguida, um PDF.",
-    "how.s1Title": "Receber",
-    "how.s1Body": "O Whapi entrega a mensagem pelo túnel da Cloudflare. Números que não estão nos contatos são ignorados.",
-    "how.s2Title": "Preparar",
-    "how.s2Body":
-      "Documentos Word viram PDF. A imagem traz fontes livres com as mesmas larguras de Arial, Times New Roman, Calibri e Cambria, para que o leiaute se mantenha.",
-    "how.s3Title": "Localizar",
-    "how.s3Body":
-      "O robô procura o nome completo do signatário junto a uma linha de assinatura vazia. Maiúsculas e acentos não importam; a grafia, sim.",
-    "how.s4Title": "Autorizar",
-    "how.s4Body": "Pedidos do titular e de contatos de confiança são assinados na hora. Pedidos de preparadores aguardam a resposta do titular.",
-    "how.s5Title": "Assinar",
-    "how.s5Body": "O PDF é assinado com o arquivo do certificado ou com o token USB, com carimbo visível. Assinaturas que já estavam no PDF continuam válidas.",
-    "how.s6Title": "Registrar",
-    "how.s6Body": "O PDF assinado volta pela conversa, e a assinatura é gravada no registro de auditoria.",
 
     "gloss.title": "Termos usados nesta página",
     "gloss.t1": "Certificado digital",
@@ -101,7 +78,6 @@ window.SEALWHARF_TRANSLATIONS = {
     "gloss.d6":
       "Um arquivo com uma linha por evento que registra cada assinatura com o horário, quem pediu, quem aprovou e a impressão digital do documento.",
 
-    "roles.eyebrow": "Papéis",
     "roles.title": "Quem pode usar um certificado e quando o titular é consultado",
     "roles.lead": "Cada certificado tem um titular. É ele quem decide quem mais pode pedir uma assinatura e se esses pedidos precisam de aprovação.",
     "roles.r1Title": "Titular",
@@ -113,27 +89,17 @@ window.SEALWHARF_TRANSLATIONS = {
     "roles.msg":
       "Olá! Recebemos um pedido de Jane Doe (+55 21 88888-8888) para assinar o documento a seguir com o seu certificado digital. Digite 1 para aprovar e 0 ou ignore para reprovar.",
     "roles.cap": "O que o titular recebe quando um preparador pede uma assinatura.",
-    "roles.note":
-      "Uma aprovação vale exatamente para o documento enviado, precisa vir do número do titular, só pode ser usada uma vez e expira. Como o titular responde apenas com 1 ou 0, ele nunca tem dois pedidos abertos ao mesmo tempo.",
 
-    "feat.eyebrow": "Recursos",
     "feat.title": "Pequeno por fora, cuidadoso por dentro",
     "feat.lead": "Tudo fica em um único arquivo de configuração, e um comando o confere antes de o robô começar.",
-    "feat.f1Title": "Encontra onde assinar",
-    "feat.f1Body":
-      "Procura o nome do signatário junto a uma linha de assinatura vazia. Os nomes do meio podem vir abreviados; o primeiro nome e o sobrenome precisam estar completos.",
     "feat.f2Title": "Arquivos e tokens USB",
     "feat.f2Body":
       "Assina com arquivos .p12 e .pfx e com tokens PKCS#11, como o A3 da ICP-Brasil. Dois comandos encontram o token e mostram as linhas para configurá-lo.",
-    "feat.f3Title": "Aprovação com uma resposta",
-    "feat.f3Body": "Quando um preparador faz um pedido, o titular recebe o PDF e responde 1 para aprovar ou 0 para recusar.",
     "feat.f4Title": "Vários signatários",
     "feat.f4Body":
       "Se o documento cita mais de um signatário que você pode usar, o robô pergunta quem deve assinar: um, todos ou cancelar. PDFs já assinados podem receber novas assinaturas.",
     "feat.f5Title": "Conferência de assinaturas",
     "feat.f5Body": "Envie a palavra verificar e, em seguida, um PDF: o robô informa as assinaturas dele sem assinar nada.",
-    "feat.f6Title": "Documentos Word",
-    "feat.f6Body": "Arquivos DOCX são convertidos em PDF antes da assinatura. Se um documento usa outras fontes, copie-as para config/fonts e reinicie.",
     "feat.f7Title": "Carimbo de tempo e raízes confiáveis",
     "feat.f7Body":
       "Carimbo de tempo RFC 3161 opcional e validação da cadeia do signatário e da situação de revogação com base nos certificados raiz que você escolher.",
@@ -142,7 +108,6 @@ window.SEALWHARF_TRANSLATIONS = {
     "feat.f9Title": "Inglês e português",
     "feat.f9Body": "Todas as mensagens do chat existem em inglês e em português do Brasil, com o idioma definido por contato.",
 
-    "safe.eyebrow": "Segurança",
     "safe.title": "Feito para recusar na dúvida",
     "safe.lead": "Uma assinatura errada é pior do que nenhuma assinatura. Estas regras valem em todo o código, e os testes cobrem os casos ambíguos.",
     "safe.m1": "tentativa de PIN antes de o robô parar, para proteger o token",
@@ -152,14 +117,10 @@ window.SEALWHARF_TRANSLATIONS = {
     "safe.m4": "de lembretes diários antes de um certificado vencer",
     "safe.c1Title": "Ambiguidade significa não assinar",
     "safe.c1Body": "Se o local da assinatura não estiver claro, ou se um nome puder pertencer a dois signatários, nada é assinado para esse signatário.",
-    "safe.c2Title": "Aprovações são restritas",
-    "safe.c2Body": "Uma aprovação vale para o documento exato que foi enviado, vem do número do titular, é usada uma única vez e expira.",
     "safe.c3Title": "Segredos ficam em um só arquivo",
     "safe.c3Body": "Senhas e PINs ficam apenas no arquivo de configuração. Um certificado enviado pelo chat é recusado sem ser aberto.",
     "safe.c4Title": "Registros sem pessoas",
     "safe.c4Body": "Os registros de operação não contêm números de telefone, nomes, nomes de arquivo nem conteúdo de documentos.",
-    "safe.c5Title": "O PIN é tentado uma vez",
-    "safe.c5Body": "Depois de uma recusa, um arquivo de proteção bloqueia qualquer novo acesso, mesmo após reiniciar, até que você execute token-retry.",
     "safe.c6Title": "Um contêiner trancado",
     "safe.c6Body":
       "Sistema de arquivos somente leitura, todas as capacidades do Linux removidas, sem elevação de privilégios e a pasta de configuração montada somente para leitura.",
@@ -170,7 +131,6 @@ window.SEALWHARF_TRANSLATIONS = {
     "safe.l4":
       "O Whapi e a Cloudflare transportam as mensagens, então os documentos passam por eles na ida e na volta. Certificados e senhas, nunca.",
 
-    "use.eyebrow": "Como usar",
     "use.title": "Escreva o nome, envie o arquivo",
     "use.lead": "Para o robô encontrar onde assinar, o documento precisa ter o nome completo do signatário junto a uma linha de assinatura vazia.",
     "use.note":
@@ -184,7 +144,6 @@ window.SEALWHARF_TRANSLATIONS = {
     "use.r4b": "Explica como usar.",
     "use.r5b": "Responde Olá, para mostrar que está funcionando.",
 
-    "start.eyebrow": "Primeiros passos",
     "start.title": "Instale em cinco passos",
     "start.lead": "O robô roda como um contêiner Docker. Antes de começar, tenha à mão estas quatro coisas:",
     "start.need1": "Docker Desktop, ou Docker com Compose",
@@ -252,7 +211,6 @@ window.SEALWHARF_TRANSLATIONS = {
     "nav.start": "Primeros pasos",
     "nav.langLabel": "Idioma",
 
-    "hero.badge": "Código abierto · Autoalojado · Se ejecuta en Docker",
     "hero.title": "Firme documentos enviándolos a un número de WhatsApp",
     "hero.subtitle":
       "Envíe un documento PDF o Word al bot y recíbalo firmado digitalmente pocos segundos después. Sealwharf se ejecuta en su propia computadora, así que sus certificados y documentos nunca salen de ella.",
@@ -265,18 +223,11 @@ window.SEALWHARF_TRANSLATIONS = {
     "hero.stat3": "basta para que el titular apruebe la solicitud de otra persona",
     "hero.stat4": "certificados o contraseñas aceptados por el chat",
 
-    "claim.eyebrow": "La idea",
     "claim.title": "Su certificado se queda en casa. Solo viajan los mensajes.",
     "claim.body":
       "Los portales de firma le piden subir el documento y, a veces, el propio certificado. Sealwharf invierte esa lógica: la firma ocurre en un contenedor en su computadora, y WhatsApp es solo el camino por donde los documentos entran y salen. Whapi transporta los mensajes y un túnel de Cloudflare le da al bot una dirección fija; ninguno de los dos ve un certificado o una contraseña.",
 
-    "about.eyebrow": "Qué es",
     "about.title": "Un escritorio de firmas dentro de su chat",
-    "about.p1":
-      "Firmar un PDF con certificado digital suele exigir un programa de escritorio, un token USB conectado a la computadora correcta y algunos minutos de clics para ubicar la firma. Cuando el documento llega al teléfono, primero tiene que viajar hasta esa computadora.",
-    "about.p2":
-      "Sealwharf es un pequeño bot que usted mismo ejecuta. Reenvíe el documento a su número: el bot encuentra dónde firmar buscando el nombre del firmante junto a una línea de firma vacía, firma con el certificado correcto y devuelve el PDF. Cuando el certificado pertenece a otra persona, esa persona aprueba con una sola respuesta.",
-    "about.casesTitle": "Para quién es",
     "about.case1Title": "Profesionales que firman todos los días",
     "about.case1Body": "Contratos, informes y formularios llegan al teléfono. Reenvíelos al bot y recíbalos firmados, sin abrir ningún programa de firma.",
     "about.case2Title": "Asistentes que preparan documentos",
@@ -286,7 +237,6 @@ window.SEALWHARF_TRANSLATIONS = {
     "about.case3Body":
       "Cada firma queda registrada con la hora, quién la pidió, quién la aprobó y la huella digital del documento, en un archivo que se queda con usted.",
 
-    "how.eyebrow": "Cómo funciona",
     "how.title": "Del mensaje en el chat al PDF firmado",
     "how.lead": "Todo lo que ocurre entre recibir el archivo y devolverlo sucede dentro del contenedor, en su computadora.",
     "how.tagIn": "Usted envía",
@@ -303,20 +253,6 @@ window.SEALWHARF_TRANSLATIONS = {
     "how.prop2": "Sello visible",
     "how.prop3": "Firmas anteriores conservadas",
     "how.cap": "El bot también verifica firmas sin firmar: envíe la palabra verify y luego un PDF.",
-    "how.s1Title": "Recibir",
-    "how.s1Body": "Whapi entrega el mensaje a través del túnel de Cloudflare. Los números que no están en los contactos se ignoran.",
-    "how.s2Title": "Preparar",
-    "how.s2Body":
-      "Los documentos Word se convierten a PDF. La imagen incluye fuentes libres con el mismo ancho que Arial, Times New Roman, Calibri y Cambria, para que el diseño se mantenga.",
-    "how.s3Title": "Ubicar",
-    "how.s3Body":
-      "El bot busca el nombre completo del firmante junto a una línea de firma vacía. Las mayúsculas y los acentos no importan; la ortografía, sí.",
-    "how.s4Title": "Autorizar",
-    "how.s4Body": "Las solicitudes del titular y de los contactos de confianza se firman de inmediato. Las de los preparadores esperan la respuesta del titular.",
-    "how.s5Title": "Firmar",
-    "how.s5Body": "El PDF se firma con el archivo del certificado o con el token USB, con un sello visible. Las firmas que ya tenía el PDF siguen siendo válidas.",
-    "how.s6Title": "Registrar",
-    "how.s6Body": "El PDF firmado vuelve por el chat, y la firma se anota en el registro de auditoría.",
 
     "gloss.title": "Términos usados en esta página",
     "gloss.t1": "Certificado digital",
@@ -330,7 +266,6 @@ window.SEALWHARF_TRANSLATIONS = {
     "gloss.d6":
       "Un archivo con una línea por evento que registra cada firma con la hora, quién la pidió, quién la aprobó y la huella digital del documento.",
 
-    "roles.eyebrow": "Roles",
     "roles.title": "Quién puede usar un certificado y cuándo se consulta al titular",
     "roles.lead": "Cada certificado tiene un titular. El titular decide quién más puede pedir una firma y si esas solicitudes necesitan aprobación.",
     "roles.r1Title": "Titular",
@@ -340,27 +275,17 @@ window.SEALWHARF_TRANSLATIONS = {
     "roles.r3Title": "De confianza",
     "roles.r3Body": "Personas en quienes el titular confía plenamente. Sus solicitudes se firman sin consultar.",
     "roles.cap": "Lo que recibe el titular cuando un preparador pide una firma. El bot escribe en inglés o en portugués de Brasil.",
-    "roles.note":
-      "Una aprobación cubre exactamente el documento enviado, debe venir del número del titular, se usa una sola vez y vence. Como el titular responde solo con 1 o 0, nunca tiene dos solicitudes abiertas a la vez.",
 
-    "feat.eyebrow": "Funciones",
     "feat.title": "Pequeño por fuera, cuidadoso por dentro",
     "feat.lead": "Todo está en un único archivo de configuración, y un comando lo verifica antes de que el bot arranque.",
-    "feat.f1Title": "Encuentra dónde firmar",
-    "feat.f1Body":
-      "Busca el nombre del firmante junto a una línea de firma vacía. Los segundos nombres pueden ir como iniciales; el nombre y el apellido deben estar completos.",
     "feat.f2Title": "Archivos y tokens USB",
     "feat.f2Body":
       "Firma con archivos .p12 y .pfx y con tokens PKCS#11, como el A3 de ICP-Brasil. Dos comandos encuentran el token y muestran las líneas para configurarlo.",
-    "feat.f3Title": "Aprobación con una respuesta",
-    "feat.f3Body": "Cuando un preparador hace una solicitud, el titular recibe el PDF y responde 1 para aprobar o 0 para rechazar.",
     "feat.f4Title": "Varios firmantes",
     "feat.f4Body":
       "Si el documento menciona a más de un firmante que usted puede usar, el bot pregunta quién debe firmar: uno, todos o cancelar. Los PDF firmados pueden volver a firmarse.",
     "feat.f5Title": "Verificación de firmas",
     "feat.f5Body": "Envíe la palabra verify y luego un PDF: el bot informa sus firmas sin firmar nada.",
-    "feat.f6Title": "Documentos Word",
-    "feat.f6Body": "Los archivos DOCX se convierten a PDF antes de firmar. Si un documento usa otras fuentes, cópielas en config/fonts y reinicie.",
     "feat.f7Title": "Sello de tiempo y raíces de confianza",
     "feat.f7Body":
       "Sello de tiempo RFC 3161 opcional y validación de la cadena del firmante y de su estado de revocación frente a los certificados raíz que usted elija.",
@@ -369,7 +294,6 @@ window.SEALWHARF_TRANSLATIONS = {
     "feat.f9Title": "Inglés y portugués",
     "feat.f9Body": "Cada mensaje del chat existe en inglés y en portugués de Brasil, con el idioma elegido por contacto.",
 
-    "safe.eyebrow": "Seguridad",
     "safe.title": "Hecho para negarse ante la duda",
     "safe.lead": "Una firma equivocada es peor que ninguna firma. Estas reglas se cumplen en todo el código, y las pruebas cubren los casos ambiguos.",
     "safe.m1": "intento de PIN antes de que el bot se detenga, para proteger el token",
@@ -379,14 +303,10 @@ window.SEALWHARF_TRANSLATIONS = {
     "safe.m4": "de recordatorios diarios antes de que venza un certificado",
     "safe.c1Title": "Ambigüedad significa no firmar",
     "safe.c1Body": "Si el lugar de la firma no está claro, o un nombre puede pertenecer a dos firmantes, no se firma nada para ese firmante.",
-    "safe.c2Title": "Aprobaciones acotadas",
-    "safe.c2Body": "Una aprobación cubre el documento exacto que se envió, viene del número del titular, se usa una sola vez y vence.",
     "safe.c3Title": "Los secretos, en un solo archivo",
     "safe.c3Body": "Las contraseñas y los PIN están solo en el archivo de configuración. Un certificado enviado por el chat se rechaza sin abrirlo.",
     "safe.c4Title": "Registros sin personas",
     "safe.c4Body": "Los registros de operación no contienen números de teléfono, nombres, nombres de archivo ni contenido de documentos.",
-    "safe.c5Title": "El PIN se prueba una vez",
-    "safe.c5Body": "Tras un rechazo, un archivo de protección bloquea cualquier nuevo acceso, incluso después de reiniciar, hasta que usted ejecute token-retry.",
     "safe.c6Title": "Un contenedor cerrado",
     "safe.c6Body":
       "Sistema de archivos de solo lectura, todas las capacidades de Linux eliminadas, sin escalada de privilegios y la carpeta de configuración montada en solo lectura.",
@@ -396,7 +316,6 @@ window.SEALWHARF_TRANSLATIONS = {
     "safe.l3": "Los números que no están en los contactos se ignoran. Solo las personas que usted registre pueden hablar con el bot.",
     "safe.l4": "Whapi y Cloudflare transportan los mensajes, así que los documentos pasan por ellos a la ida y a la vuelta. Los certificados y las contraseñas, nunca.",
 
-    "use.eyebrow": "Cómo usarlo",
     "use.title": "Escriba el nombre, envíe el archivo",
     "use.lead": "Para que el bot encuentre dónde firmar, el documento necesita el nombre completo del firmante junto a una línea de firma vacía.",
     "use.note":
@@ -410,7 +329,6 @@ window.SEALWHARF_TRANSLATIONS = {
     "use.r4b": "Explica cómo usarlo.",
     "use.r5b": "Responde Hello, para mostrar que funciona.",
 
-    "start.eyebrow": "Primeros pasos",
     "start.title": "Instálelo en cinco pasos",
     "start.lead": "El bot se ejecuta como un contenedor Docker. Antes de empezar, tenga a mano estas cuatro cosas:",
     "start.need1": "Docker Desktop, o Docker con Compose",

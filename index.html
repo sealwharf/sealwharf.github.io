@@ -22,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/motion.css" />
+    <link rel="stylesheet" href="assets/css/accents.css" />
     <script src="assets/js/translations.js" defer></script>
     <script src="assets/js/i18n.js" defer></script>
     <script src="assets/js/main.js" defer></script>
@@ -77,7 +78,6 @@
         <div class="container hero-inner">
           <div class="hero-main">
             <div class="hero-copy">
-              <p class="eyebrow eyebrow--accent" data-i18n="hero.badge">Open source · Self-hosted · Runs in Docker</p>
               <h1 class="hero-title" id="hero-title" data-i18n="hero.title">Sign documents by sending them to a WhatsApp number</h1>
               <p class="hero-subtitle" data-i18n="hero.subtitle">
                 Send a PDF or Word document to the bot and get it back digitally signed, a few seconds later. Sealwharf runs on your own computer, so your certificates and documents never leave it.
@@ -143,11 +143,18 @@
         </div>
       </section>
 
+      <!-- Ticker -->
+      <div class="a-ticker" aria-hidden="true">
+        <div class="a-ticker-track">
+          <span>PAdES</span><span>ICP-Brasil A1 · A3</span><span>.p12 · .pfx</span><span>PKCS#11</span><span>PDF · DOCX</span><span>RFC 3161</span><span>Docker</span><span>Cloudflare Tunnel</span><span>Whapi.Cloud</span><span>Ollama</span>
+          <span>PAdES</span><span>ICP-Brasil A1 · A3</span><span>.p12 · .pfx</span><span>PKCS#11</span><span>PDF · DOCX</span><span>RFC 3161</span><span>Docker</span><span>Cloudflare Tunnel</span><span>Whapi.Cloud</span><span>Ollama</span>
+        </div>
+      </div>
+
       <!-- Claim -->
       <section class="section--claim" aria-labelledby="claim-title">
         <div class="container m-claim-grid">
           <div class="m-reveal">
-            <p class="eyebrow eyebrow--accent" data-i18n="claim.eyebrow">The idea</p>
             <h2 class="claim-title" id="claim-title" data-i18n="claim.title">Your certificate stays home. Only the messages travel.</h2>
             <p class="claim-body" data-i18n="claim.body">
               Signing portals ask you to upload the document, and sometimes the certificate. Sealwharf turns this around: the signing happens in a container on your computer, and WhatsApp is only the way documents come in and go out. Whapi carries the messages and a Cloudflare tunnel gives the bot a fixed address; neither of them ever sees a certificate or a password.
@@ -194,29 +201,21 @@
       <!-- About -->
       <section class="section" id="about" aria-labelledby="about-title">
         <div class="container">
-          <p class="eyebrow eyebrow--accent" data-i18n="about.eyebrow">What it is</p>
           <h2 class="section-title" id="about-title" data-i18n="about.title">A signing desk that lives in your chat</h2>
-          <div class="prose">
-            <p data-i18n="about.p1">
-              Signing a PDF with a digital certificate usually means a desktop program, a USB token plugged into the right computer and a few minutes of clicking to place the signature. When the document arrives on the phone, it has to travel to that computer first.
-            </p>
-            <p data-i18n="about.p2">
-              Sealwharf is a small bot that you run yourself. Forward the document to its number and it finds where to sign by looking for the signer's name next to an empty signature line, signs it with the right certificate and sends the PDF back. When the certificate belongs to someone else, that person approves with a single reply.
-            </p>
-          </div>
-
-          <h3 class="subhead" data-i18n="about.casesTitle">Who it is for</h3>
           <div class="grid grid-3">
-            <article class="card">
-              <h4 class="card-title" data-i18n="about.case1Title">Professionals who sign every day</h4>
+            <article class="card a-card a-tone-1 m-reveal">
+              <span class="a-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z" /><path d="M14 3v5h5M9 15c1.5-2 2.5-2 3 0s2 1 3-1" /></svg></span>
+              <h3 class="card-title" data-i18n="about.case1Title">Professionals who sign every day</h3>
               <p class="card-body" data-i18n="about.case1Body">Contracts, reports and forms arrive by phone. Forward them to the bot and receive them signed, without opening a signing program.</p>
             </article>
-            <article class="card">
-              <h4 class="card-title" data-i18n="about.case2Title">Assistants who prepare documents</h4>
+            <article class="card a-card a-tone-2 m-reveal">
+              <span class="a-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5" /><path d="M3 20c.6-3.4 3-5.5 6-5.5s5.4 2.1 6 5.5M16 4.5a3.5 3.5 0 0 1 0 7M21 20c-.4-2.6-1.8-4.4-3.8-5.1" /></svg></span>
+              <h3 class="card-title" data-i18n="about.case2Title">Assistants who prepare documents</h3>
               <p class="card-body" data-i18n="about.case2Body">An assistant sends the document; the certificate owner gets it on their own phone and approves with 1. Nobody shares a password.</p>
             </article>
-            <article class="card">
-              <h4 class="card-title" data-i18n="about.case3Title">Offices that need a record</h4>
+            <article class="card a-card a-tone-3 m-reveal">
+              <span class="a-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12" /><path d="M9 21v-6h6v6M9 11h6" /></svg></span>
+              <h3 class="card-title" data-i18n="about.case3Title">Offices that need a record</h3>
               <p class="card-body" data-i18n="about.case3Body">Every signature is recorded with the time, who asked, who approved and the fingerprint of the document, in a file that stays with you.</p>
             </article>
           </div>
@@ -226,7 +225,6 @@
       <!-- How it works -->
       <section class="section section--alt" id="how" aria-labelledby="how-title">
         <div class="container">
-          <p class="eyebrow eyebrow--accent" data-i18n="how.eyebrow">How it works</p>
           <h2 class="section-title" id="how-title" data-i18n="how.title">From a chat message to a signed PDF</h2>
           <p class="section-lead" data-i18n="how.lead">Everything between receiving the file and sending it back happens inside the container, on your computer.</p>
 
@@ -292,39 +290,6 @@
             <figcaption class="flow-cap" data-i18n="how.cap">The bot also checks signatures without signing: send the word verify, then a PDF.</figcaption>
           </figure>
 
-          <ol class="pipeline">
-            <li class="pipeline-step">
-              <span class="pipeline-num">1</span>
-              <h3 class="pipeline-title" data-i18n="how.s1Title">Receive</h3>
-              <p class="pipeline-body" data-i18n="how.s1Body">Whapi delivers the message through the Cloudflare tunnel. Numbers that are not in the contacts are ignored.</p>
-            </li>
-            <li class="pipeline-step">
-              <span class="pipeline-num">2</span>
-              <h3 class="pipeline-title" data-i18n="how.s2Title">Prepare</h3>
-              <p class="pipeline-body" data-i18n="how.s2Body">Word documents become PDF. The image ships free fonts with the same widths as Arial, Times New Roman, Calibri and Cambria, so the layout holds.</p>
-            </li>
-            <li class="pipeline-step">
-              <span class="pipeline-num">3</span>
-              <h3 class="pipeline-title" data-i18n="how.s3Title">Locate</h3>
-              <p class="pipeline-body" data-i18n="how.s3Body">The bot looks for the signer's full name next to an empty signature line. Capitals and accents do not matter; spelling does.</p>
-            </li>
-            <li class="pipeline-step">
-              <span class="pipeline-num">4</span>
-              <h3 class="pipeline-title" data-i18n="how.s4Title">Authorize</h3>
-              <p class="pipeline-body" data-i18n="how.s4Body">Owners and trusted contacts are signed at once. Requests from preparers wait for the owner's reply.</p>
-            </li>
-            <li class="pipeline-step">
-              <span class="pipeline-num">5</span>
-              <h3 class="pipeline-title" data-i18n="how.s5Title">Sign</h3>
-              <p class="pipeline-body" data-i18n="how.s5Body">The PDF is signed with the certificate file or the USB token, with a visible stamp. Signatures already in the PDF stay valid.</p>
-            </li>
-            <li class="pipeline-step">
-              <span class="pipeline-num">6</span>
-              <h3 class="pipeline-title" data-i18n="how.s6Title">Record</h3>
-              <p class="pipeline-body" data-i18n="how.s6Body">The signed PDF goes back through the chat, and the signature is written to the audit record.</p>
-            </li>
-          </ol>
-
           <details class="glossary">
             <summary data-i18n="gloss.title">Terms used on this page</summary>
             <dl class="glossary-list">
@@ -360,22 +325,24 @@
       <!-- Roles -->
       <section class="section" id="roles" aria-labelledby="roles-title">
         <div class="container">
-          <p class="eyebrow eyebrow--accent" data-i18n="roles.eyebrow">Roles</p>
           <h2 class="section-title" id="roles-title" data-i18n="roles.title">Who may use a certificate, and when the owner is asked</h2>
           <p class="section-lead" data-i18n="roles.lead">Each certificate has one owner. The owner decides who else may ask for a signature and whether those requests need approval.</p>
 
           <div class="grid grid-3">
-            <article class="card">
+            <article class="card a-card a-role a-tone-1 m-reveal">
+              <span class="a-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="4" /><path d="M11 12l8-8M16 7l2.5 2.5M14 9l2 2" /></svg></span>
               <span class="card-key">owner</span>
               <h3 class="card-title" data-i18n="roles.r1Title">Owner</h3>
               <p class="card-body" data-i18n="roles.r1Body">The person the certificate belongs to. Their documents are signed at once, and they approve other people's requests.</p>
             </article>
-            <article class="card">
+            <article class="card a-card a-role a-tone-2 m-reveal">
+              <span class="a-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z" /><path d="M14 3v5h5M12 18v-6M9.5 14.5L12 12l2.5 2.5" /></svg></span>
               <span class="card-key">preparers</span>
               <h3 class="card-title" data-i18n="roles.r2Title">Preparers</h3>
               <p class="card-body" data-i18n="roles.r2Body">People who prepare documents for the owner. Each request waits for the owner's approval.</p>
             </article>
-            <article class="card">
+            <article class="card a-card a-role a-tone-3 m-reveal">
+              <span class="a-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z" /><path d="M8.5 12l2.5 2.5 4.5-5" /></svg></span>
               <span class="card-key">trusted</span>
               <h3 class="card-title" data-i18n="roles.r3Title">Trusted</h3>
               <p class="card-body" data-i18n="roles.r3Body">People the owner trusts completely. Their requests are signed without asking.</p>
@@ -420,60 +387,42 @@ certificates:
     trusted: [mary]</code></pre>
             </div>
           </div>
-
-          <p class="note" data-i18n="roles.note">An approval covers exactly the document that was sent, comes from the owner's number, is used once and expires. Because the owner answers with a plain 1 or 0, an owner never has two requests open at once.</p>
         </div>
       </section>
 
       <!-- Features -->
       <section class="section section--alt" id="features" aria-labelledby="features-title">
         <div class="container">
-          <p class="eyebrow eyebrow--accent" data-i18n="feat.eyebrow">Features</p>
           <h2 class="section-title" id="features-title" data-i18n="feat.title">Small on the outside, careful on the inside</h2>
           <p class="section-lead" data-i18n="feat.lead">Everything lives in one configuration file, and one command checks it before the bot starts.</p>
           <div class="grid grid-3">
-            <article class="card card--feature">
-              <span class="card-icon" aria-hidden="true">&#9678;</span>
-              <h3 class="card-title" data-i18n="feat.f1Title">Finds where to sign</h3>
-              <p class="card-body" data-i18n="feat.f1Body">Looks for the signer's name next to an empty signature line. Middle names may be initials; first and last names must be complete.</p>
-            </article>
-            <article class="card card--feature">
-              <span class="card-icon" aria-hidden="true">&#9635;</span>
+            <article class="card card--feature a-feature m-reveal">
+              <span class="a-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="13" height="8" rx="2" /><path d="M16 10h3v4h-3M7 12h5" /></svg></span>
               <h3 class="card-title" data-i18n="feat.f2Title">Files and USB tokens</h3>
               <p class="card-body" data-i18n="feat.f2Body">Signs with .p12 and .pfx files and with PKCS#11 tokens such as ICP-Brasil A3. Two commands find the token and print the lines to configure it.</p>
             </article>
-            <article class="card card--feature">
-              <span class="card-icon" aria-hidden="true">&#10003;</span>
-              <h3 class="card-title" data-i18n="feat.f3Title">One-reply approval</h3>
-              <p class="card-body" data-i18n="feat.f3Body">When a preparer asks, the owner receives the PDF and answers 1 to approve or 0 to refuse.</p>
-            </article>
-            <article class="card card--feature">
-              <span class="card-icon" aria-hidden="true">&#10697;</span>
+            <article class="card card--feature a-feature m-reveal">
+              <span class="a-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3" /><circle cx="16" cy="8" r="3" /><path d="M3 19c.5-3 2.5-5 5-5s4.5 2 5 5M11 19c.5-3 2.5-5 5-5s4.5 2 5 5" /></svg></span>
               <h3 class="card-title" data-i18n="feat.f4Title">Several signers</h3>
               <p class="card-body" data-i18n="feat.f4Body">If the document names more than one signer you may use, the bot asks who should sign: one, all, or cancel. Signed PDFs can be signed again.</p>
             </article>
-            <article class="card card--feature">
-              <span class="card-icon" aria-hidden="true">&#8981;</span>
+            <article class="card card--feature a-feature m-reveal">
+              <span class="a-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l5 5M8.5 11l2 2 3.5-4" /></svg></span>
               <h3 class="card-title" data-i18n="feat.f5Title">Signature check</h3>
               <p class="card-body" data-i18n="feat.f5Body">Send the word verify, then a PDF, and the bot reports its signatures without signing anything.</p>
             </article>
-            <article class="card card--feature">
-              <span class="card-icon" aria-hidden="true">&#10063;</span>
-              <h3 class="card-title" data-i18n="feat.f6Title">Word documents</h3>
-              <p class="card-body" data-i18n="feat.f6Body">DOCX files are converted to PDF before signing. If a document uses other fonts, copy them into config/fonts and restart.</p>
-            </article>
-            <article class="card card--feature">
-              <span class="card-icon" aria-hidden="true">&#9201;</span>
+            <article class="card card--feature a-feature m-reveal">
+              <span class="a-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8" /><path d="M12 9v4l2.5 2.5M9 2h6" /></svg></span>
               <h3 class="card-title" data-i18n="feat.f7Title">Timestamp and trust roots</h3>
               <p class="card-body" data-i18n="feat.f7Body">Optional RFC 3161 timestamp, and validation of the signer's chain and revocation status against the root certificates you choose.</p>
             </article>
-            <article class="card card--feature">
-              <span class="card-icon" aria-hidden="true">&#9680;</span>
+            <article class="card card--feature a-feature m-reveal">
+              <span class="a-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z" /><circle cx="12" cy="12" r="2.8" /></svg></span>
               <h3 class="card-title" data-i18n="feat.f8Title">Local AI, optional</h3>
               <p class="card-body" data-i18n="feat.f8Body">A small vision model running on your computer, through Ollama, can find signature places in forms and scanned pages.</p>
             </article>
-            <article class="card card--feature">
-              <span class="card-icon" aria-hidden="true">&#8644;</span>
+            <article class="card card--feature a-feature m-reveal">
+              <span class="a-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h11v8H8l-4 3V5z" /><path d="M15 9h5v8l-3-2.5h-6V13" /></svg></span>
               <h3 class="card-title" data-i18n="feat.f9Title">English and Portuguese</h3>
               <p class="card-body" data-i18n="feat.f9Body">Every chat message exists in English and Brazilian Portuguese, chosen per contact.</p>
             </article>
@@ -484,7 +433,6 @@ certificates:
       <!-- Safety -->
       <section class="section section--dark" id="safety" aria-labelledby="safety-title">
         <div class="container">
-          <p class="eyebrow eyebrow--accent" data-i18n="safe.eyebrow">Safety</p>
           <h2 class="section-title" id="safety-title" data-i18n="safe.title">Built to refuse when in doubt</h2>
           <p class="section-lead" data-i18n="safe.lead">A wrong signature is worse than no signature. These rules hold everywhere in the code, and the tests cover the ambiguous cases.</p>
 
@@ -507,28 +455,20 @@ certificates:
             </div>
           </dl>
 
-          <div class="grid grid-3">
-            <article class="card card--dark">
+          <div class="grid a-grid-2">
+            <article class="card card--dark a-dark m-reveal">
               <h3 class="card-title" data-i18n="safe.c1Title">Ambiguity means no signature</h3>
               <p class="card-body" data-i18n="safe.c1Body">If the place to sign is unclear, or a name could belong to two signers, nothing is signed for that signer.</p>
             </article>
-            <article class="card card--dark">
-              <h3 class="card-title" data-i18n="safe.c2Title">Approvals are narrow</h3>
-              <p class="card-body" data-i18n="safe.c2Body">An approval covers the exact document that was sent, comes from the owner's number, is used once and expires.</p>
-            </article>
-            <article class="card card--dark">
+            <article class="card card--dark a-dark m-reveal">
               <h3 class="card-title" data-i18n="safe.c3Title">Secrets stay in one file</h3>
               <p class="card-body" data-i18n="safe.c3Body">Passwords and PINs live only in the configuration file. A certificate sent through the chat is refused without being opened.</p>
             </article>
-            <article class="card card--dark">
+            <article class="card card--dark a-dark m-reveal">
               <h3 class="card-title" data-i18n="safe.c4Title">Logs without people</h3>
               <p class="card-body" data-i18n="safe.c4Body">Operational logs carry no phone numbers, names, file names or document content.</p>
             </article>
-            <article class="card card--dark">
-              <h3 class="card-title" data-i18n="safe.c5Title">A PIN is tried once</h3>
-              <p class="card-body" data-i18n="safe.c5Body">After a refusal, a guard file blocks every new login, even after a restart, until you run token-retry.</p>
-            </article>
-            <article class="card card--dark">
+            <article class="card card--dark a-dark m-reveal">
               <h3 class="card-title" data-i18n="safe.c6Title">A locked-down container</h3>
               <p class="card-body" data-i18n="safe.c6Body">Read-only file system, every Linux capability dropped, no privilege escalation, and the configuration folder mounted read-only.</p>
             </article>
@@ -549,7 +489,6 @@ certificates:
       <!-- Using it -->
       <section class="section" id="use" aria-labelledby="use-title">
         <div class="container">
-          <p class="eyebrow eyebrow--accent" data-i18n="use.eyebrow">Using it</p>
           <h2 class="section-title" id="use-title" data-i18n="use.title">Write the name, send the file</h2>
           <p class="section-lead" data-i18n="use.lead">For the bot to find where to sign, the document needs the signer's full name next to an empty signature line.</p>
 
@@ -620,7 +559,6 @@ certificates:
       <!-- Quick start -->
       <section class="section section--alt" id="start" aria-labelledby="start-title">
         <div class="container">
-          <p class="eyebrow eyebrow--accent" data-i18n="start.eyebrow">Quick start</p>
           <h2 class="section-title" id="start-title" data-i18n="start.title">Set it up in five steps</h2>
           <p class="section-lead" data-i18n="start.lead">The bot runs as a Docker container. Before you begin, have these four things at hand:</p>
           <ul class="needs">
