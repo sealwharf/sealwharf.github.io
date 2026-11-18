@@ -1,12 +1,609 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SealWharf</title>
-</head>
-<body>
-  <h1>SealWharf</h1>
-  <p>Página de teste. Se você está lendo isto, o GitHub Pages está funcionando.</p>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="meta.title">Sealwharf · Sign documents through WhatsApp, on your own computer</title>
+    <meta
+      name="description"
+      data-i18n="meta.description"
+      data-i18n-attr="content"
+      content="Sealwharf is an open-source bot that signs PDF and Word documents sent to a WhatsApp number, with .p12/.pfx certificates or USB tokens. It runs in Docker on your own computer, so certificates and documents never leave it."
+    />
+    <meta property="og:title" content="Sealwharf" />
+    <meta property="og:description" content="Sign documents by sending them to a WhatsApp number. Self-hosted, in Docker." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sealwharf.github.io/" />
+    <meta property="og:image" content="https://sealwharf.github.io/assets/img/og.png" />
+    <meta name="theme-color" content="#10263d" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/translations.js" defer></script>
+    <script src="assets/js/i18n.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a class="brand" href="#top">
+          <img class="brand-logo" src="assets/img/logo.webp" alt="" width="38" height="38" />
+          <span>Sealwharf</span>
+        </a>
+
+        <nav class="main-nav" id="main-nav" aria-label="Primary" data-i18n="nav.label" data-i18n-attr="aria-label">
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#how" data-i18n="nav.how">How it works</a>
+          <a href="#roles" data-i18n="nav.roles">Roles</a>
+          <a href="#features" data-i18n="nav.features">Features</a>
+          <a href="#safety" data-i18n="nav.safety">Safety</a>
+          <a href="#use" data-i18n="nav.use">Using it</a>
+          <a href="#start" data-i18n="nav.start">Quick start</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="lang-switch" role="group" aria-label="Language" data-i18n="nav.langLabel" data-i18n-attr="aria-label">
+            <button type="button" class="lang-btn" data-lang="pt" aria-pressed="false">PT</button>
+            <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+            <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
+          </div>
+          <a class="btn btn-ghost btn-sm" href="https://github.com/mauricioeluri/sealwharf" target="_blank" rel="noopener">GitHub</a>
+          <button type="button" class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-seal" aria-hidden="true"></div>
+        <div class="container hero-inner">
+          <p class="eyebrow eyebrow--accent" data-i18n="hero.badge">Open source · Self-hosted · Runs in Docker</p>
+          <h1 class="hero-title" id="hero-title" data-i18n="hero.title">Sign documents by sending them to a WhatsApp number</h1>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">
+            Send a PDF or Word document to the bot and get it back digitally signed, a few seconds later. Sealwharf runs on your own computer, so your certificates and documents never leave it.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="https://github.com/mauricioeluri/sealwharf" target="_blank" rel="noopener" data-i18n="hero.ctaGithub">View on GitHub</a>
+            <a class="btn btn-outline" href="#how" data-i18n="hero.ctaHow">See how it works</a>
+            <a class="btn btn-outline" href="#start" data-i18n="hero.ctaStart">Set it up in five steps</a>
+          </div>
+          <dl class="hero-stats">
+            <div class="stat">
+              <dt class="stat-value">PDF · DOCX</dt>
+              <dd class="stat-label" data-i18n="hero.stat1">documents accepted; Word files are converted to PDF before signing</dd>
+            </div>
+            <div class="stat">
+              <dt class="stat-value">.p12 · A3</dt>
+              <dd class="stat-label" data-i18n="hero.stat2">certificate files and USB tokens (PKCS#11)</dd>
+            </div>
+            <div class="stat">
+              <dt class="stat-value" data-i18n="hero.stat3v">1 reply</dt>
+              <dd class="stat-label" data-i18n="hero.stat3">for an owner to approve someone else's request</dd>
+            </div>
+            <div class="stat">
+              <dt class="stat-value">0</dt>
+              <dd class="stat-label" data-i18n="hero.stat4">certificates or passwords accepted through the chat</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- Claim -->
+      <section class="section--claim" aria-labelledby="claim-title">
+        <div class="container">
+          <p class="eyebrow eyebrow--accent" data-i18n="claim.eyebrow">The idea</p>
+          <h2 class="claim-title" id="claim-title" data-i18n="claim.title">Your certificate stays home. Only the messages travel.</h2>
+          <p class="claim-body" data-i18n="claim.body">
+            Signing portals ask you to upload the document, and sometimes the certificate. Sealwharf turns this around: the signing happens in a container on your computer, and WhatsApp is only the way documents come in and go out. Whapi carries the messages and a Cloudflare tunnel gives the bot a fixed address; neither of them ever sees a certificate or a password.
+          </p>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="container">
+          <p class="eyebrow eyebrow--accent" data-i18n="about.eyebrow">What it is</p>
+          <h2 class="section-title" id="about-title" data-i18n="about.title">A signing desk that lives in your chat</h2>
+          <div class="prose">
+            <p data-i18n="about.p1">
+              Signing a PDF with a digital certificate usually means a desktop program, a USB token plugged into the right computer and a few minutes of clicking to place the signature. When the document arrives on the phone, it has to travel to that computer first.
+            </p>
+            <p data-i18n="about.p2">
+              Sealwharf is a small bot that you run yourself. Forward the document to its number and it finds where to sign by looking for the signer's name next to an empty signature line, signs it with the right certificate and sends the PDF back. When the certificate belongs to someone else, that person approves with a single reply.
+            </p>
+          </div>
+
+          <h3 class="subhead" data-i18n="about.casesTitle">Who it is for</h3>
+          <div class="grid grid-3">
+            <article class="card">
+              <h4 class="card-title" data-i18n="about.case1Title">Professionals who sign every day</h4>
+              <p class="card-body" data-i18n="about.case1Body">Contracts, reports and forms arrive by phone. Forward them to the bot and receive them signed, without opening a signing program.</p>
+            </article>
+            <article class="card">
+              <h4 class="card-title" data-i18n="about.case2Title">Assistants who prepare documents</h4>
+              <p class="card-body" data-i18n="about.case2Body">An assistant sends the document; the certificate owner gets it on their own phone and approves with 1. Nobody shares a password.</p>
+            </article>
+            <article class="card">
+              <h4 class="card-title" data-i18n="about.case3Title">Offices that need a record</h4>
+              <p class="card-body" data-i18n="about.case3Body">Every signature is recorded with the time, who asked, who approved and the fingerprint of the document, in a file that stays with you.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section class="section section--alt" id="how" aria-labelledby="how-title">
+        <div class="container">
+          <p class="eyebrow eyebrow--accent" data-i18n="how.eyebrow">How it works</p>
+          <h2 class="section-title" id="how-title" data-i18n="how.title">From a chat message to a signed PDF</h2>
+          <p class="section-lead" data-i18n="how.lead">Everything between receiving the file and sending it back happens inside the container, on your computer.</p>
+
+          <figure class="flow">
+            <div class="flow-grid">
+              <div class="flow-stage">
+                <span class="flow-tag" data-i18n="how.tagIn">You send</span>
+                <ul class="chat">
+                  <li class="bubble bubble--out">
+                    <span class="bubble-file">contract.pdf</span>
+                    <span class="bubble-meta">14:31</span>
+                  </li>
+                  <li class="bubble bubble--in">
+                    <span data-i18n="how.msgGot">Got it! Working on your document...</span>
+                    <span class="bubble-meta">14:31</span>
+                  </li>
+                  <li class="bubble bubble--in">
+                    <span class="bubble-file bubble-file--signed">contract.pdf</span>
+                    <span data-i18n="how.msgDone">All set! Signed by: John Doe.</span>
+                    <span class="bubble-meta">14:32</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="flow-arrow" aria-hidden="true"><span>&rarr;</span></div>
+
+              <div class="flow-stage">
+                <span class="flow-tag flow-tag--accent" data-i18n="how.tagCore">Sealwharf, on your computer</span>
+                <ol class="flow-chips">
+                  <li data-i18n="how.chip1">Receive the file</li>
+                  <li data-i18n="how.chip2">Convert Word to PDF</li>
+                  <li data-i18n="how.chip3">Find the name and the line</li>
+                  <li data-i18n="how.chip4">Check roles and approval</li>
+                  <li data-i18n="how.chip5">Sign with the certificate</li>
+                  <li data-i18n="how.chip6">Record and send it back</li>
+                </ol>
+              </div>
+
+              <div class="flow-arrow" aria-hidden="true"><span>&rarr;</span></div>
+
+              <div class="flow-stage">
+                <span class="flow-tag" data-i18n="how.tagOut">You get back</span>
+                <div class="doc" role="img" aria-label="Signed PDF with a visible signature stamp above the signer's name" data-i18n="how.docAlt" data-i18n-attr="aria-label">
+                  <div class="doc-line doc-line--title"></div>
+                  <div class="doc-line"></div>
+                  <div class="doc-line"></div>
+                  <div class="doc-line doc-line--short"></div>
+                  <div class="doc-sign">
+                    <div class="stamp">
+                      <img src="assets/img/logo.webp" alt="" width="26" height="26" loading="lazy" />
+                      <span>Digitally signed by<br />JOHN DOE<br />Date: 2026.11.18</span>
+                    </div>
+                    <div class="sigline">John Doe</div>
+                  </div>
+                </div>
+                <ul class="chips" aria-label="Signature properties" data-i18n="how.chipsLabel" data-i18n-attr="aria-label">
+                  <li>PAdES</li>
+                  <li data-i18n="how.prop2">Visible stamp</li>
+                  <li data-i18n="how.prop3">Earlier signatures kept</li>
+                </ul>
+              </div>
+            </div>
+            <figcaption class="flow-cap" data-i18n="how.cap">The bot also checks signatures without signing: send the word verify, then a PDF.</figcaption>
+          </figure>
+
+          <ol class="pipeline">
+            <li class="pipeline-step">
+              <span class="pipeline-num">1</span>
+              <h3 class="pipeline-title" data-i18n="how.s1Title">Receive</h3>
+              <p class="pipeline-body" data-i18n="how.s1Body">Whapi delivers the message through the Cloudflare tunnel. Numbers that are not in the contacts are ignored.</p>
+            </li>
+            <li class="pipeline-step">
+              <span class="pipeline-num">2</span>
+              <h3 class="pipeline-title" data-i18n="how.s2Title">Prepare</h3>
+              <p class="pipeline-body" data-i18n="how.s2Body">Word documents become PDF. The image ships free fonts with the same widths as Arial, Times New Roman, Calibri and Cambria, so the layout holds.</p>
+            </li>
+            <li class="pipeline-step">
+              <span class="pipeline-num">3</span>
+              <h3 class="pipeline-title" data-i18n="how.s3Title">Locate</h3>
+              <p class="pipeline-body" data-i18n="how.s3Body">The bot looks for the signer's full name next to an empty signature line. Capitals and accents do not matter; spelling does.</p>
+            </li>
+            <li class="pipeline-step">
+              <span class="pipeline-num">4</span>
+              <h3 class="pipeline-title" data-i18n="how.s4Title">Authorize</h3>
+              <p class="pipeline-body" data-i18n="how.s4Body">Owners and trusted contacts are signed at once. Requests from preparers wait for the owner's reply.</p>
+            </li>
+            <li class="pipeline-step">
+              <span class="pipeline-num">5</span>
+              <h3 class="pipeline-title" data-i18n="how.s5Title">Sign</h3>
+              <p class="pipeline-body" data-i18n="how.s5Body">The PDF is signed with the certificate file or the USB token, with a visible stamp. Signatures already in the PDF stay valid.</p>
+            </li>
+            <li class="pipeline-step">
+              <span class="pipeline-num">6</span>
+              <h3 class="pipeline-title" data-i18n="how.s6Title">Record</h3>
+              <p class="pipeline-body" data-i18n="how.s6Body">The signed PDF goes back through the chat, and the signature is written to the audit record.</p>
+            </li>
+          </ol>
+
+          <details class="glossary">
+            <summary data-i18n="gloss.title">Terms used on this page</summary>
+            <dl class="glossary-list">
+              <div>
+                <dt data-i18n="gloss.t1">Digital certificate</dt>
+                <dd data-i18n="gloss.d1">An electronic identity issued by a certificate authority, such as an ICP-Brasil A1 (a .p12 or .pfx file) or A3 (on a USB token or smart card).</dd>
+              </div>
+              <div>
+                <dt>PAdES</dt>
+                <dd data-i18n="gloss.d2">The standard for signatures embedded in PDF files. Any PDF reader that checks signatures can validate them.</dd>
+              </div>
+              <div>
+                <dt>PKCS#11</dt>
+                <dd data-i18n="gloss.d3">The standard interface that programs use to talk to USB tokens and smart cards. Each vendor ships a library for it.</dd>
+              </div>
+              <div>
+                <dt>Whapi.Cloud</dt>
+                <dd data-i18n="gloss.d4">A service that connects a WhatsApp number to a program through an API. Sealwharf uses it to receive and send messages.</dd>
+              </div>
+              <div>
+                <dt>Cloudflare Tunnel</dt>
+                <dd data-i18n="gloss.d5">A connection from your computer to Cloudflare that gives the bot a public HTTPS address without opening ports on your router.</dd>
+              </div>
+              <div>
+                <dt data-i18n="gloss.t6">Audit record</dt>
+                <dd data-i18n="gloss.d6">A file with one line per event that records each signature with the time, who asked, who approved and the fingerprint of the document.</dd>
+              </div>
+            </dl>
+          </details>
+        </div>
+      </section>
+
+      <!-- Roles -->
+      <section class="section" id="roles" aria-labelledby="roles-title">
+        <div class="container">
+          <p class="eyebrow eyebrow--accent" data-i18n="roles.eyebrow">Roles</p>
+          <h2 class="section-title" id="roles-title" data-i18n="roles.title">Who may use a certificate, and when the owner is asked</h2>
+          <p class="section-lead" data-i18n="roles.lead">Each certificate has one owner. The owner decides who else may ask for a signature and whether those requests need approval.</p>
+
+          <div class="grid grid-3">
+            <article class="card">
+              <span class="card-key">owner</span>
+              <h3 class="card-title" data-i18n="roles.r1Title">Owner</h3>
+              <p class="card-body" data-i18n="roles.r1Body">The person the certificate belongs to. Their documents are signed at once, and they approve other people's requests.</p>
+            </article>
+            <article class="card">
+              <span class="card-key">preparers</span>
+              <h3 class="card-title" data-i18n="roles.r2Title">Preparers</h3>
+              <p class="card-body" data-i18n="roles.r2Body">People who prepare documents for the owner. Each request waits for the owner's approval.</p>
+            </article>
+            <article class="card">
+              <span class="card-key">trusted</span>
+              <h3 class="card-title" data-i18n="roles.r3Title">Trusted</h3>
+              <p class="card-body" data-i18n="roles.r3Body">People the owner trusts completely. Their requests are signed without asking.</p>
+            </article>
+          </div>
+
+          <div class="roles-split">
+            <figure class="approval">
+              <ul class="chat">
+                <li class="bubble bubble--in">
+                  <span class="bubble-file">report.pdf</span>
+                  <span data-i18n="roles.msg">Hello! Jane Doe (+55 21 88888-8888) asks you to sign the following document with your digital certificate. Reply 1 to approve. Reply 0, or simply ignore this message, to refuse.</span>
+                  <span class="bubble-meta">09:12</span>
+                </li>
+                <li class="bubble bubble--out">1<span class="bubble-meta">09:13</span></li>
+              </ul>
+              <figcaption data-i18n="roles.cap">What the owner receives when a preparer asks for a signature.</figcaption>
+            </figure>
+
+            <div class="code-block code-block--flush">
+              <pre class="code" id="code-roles"><code><span class="c"># config/sealwharf.yaml</span>
+certificates:
+  - id: john
+    name: John Doe
+    file: certificates/john.p12
+    password: "certificate-password"
+    owner: john
+    preparers: [jane]
+    trusted: [mary]</code></pre>
+            </div>
+          </div>
+
+          <p class="note" data-i18n="roles.note">An approval covers exactly the document that was sent, comes from the owner's number, is used once and expires. Because the owner answers with a plain 1 or 0, an owner never has two requests open at once.</p>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="section section--alt" id="features" aria-labelledby="features-title">
+        <div class="container">
+          <p class="eyebrow eyebrow--accent" data-i18n="feat.eyebrow">Features</p>
+          <h2 class="section-title" id="features-title" data-i18n="feat.title">Small on the outside, careful on the inside</h2>
+          <p class="section-lead" data-i18n="feat.lead">Everything lives in one configuration file, and one command checks it before the bot starts.</p>
+          <div class="grid grid-3">
+            <article class="card card--feature">
+              <span class="card-icon" aria-hidden="true">&#9678;</span>
+              <h3 class="card-title" data-i18n="feat.f1Title">Finds where to sign</h3>
+              <p class="card-body" data-i18n="feat.f1Body">Looks for the signer's name next to an empty signature line. Middle names may be initials; first and last names must be complete.</p>
+            </article>
+            <article class="card card--feature">
+              <span class="card-icon" aria-hidden="true">&#9635;</span>
+              <h3 class="card-title" data-i18n="feat.f2Title">Files and USB tokens</h3>
+              <p class="card-body" data-i18n="feat.f2Body">Signs with .p12 and .pfx files and with PKCS#11 tokens such as ICP-Brasil A3. Two commands find the token and print the lines to configure it.</p>
+            </article>
+            <article class="card card--feature">
+              <span class="card-icon" aria-hidden="true">&#10003;</span>
+              <h3 class="card-title" data-i18n="feat.f3Title">One-reply approval</h3>
+              <p class="card-body" data-i18n="feat.f3Body">When a preparer asks, the owner receives the PDF and answers 1 to approve or 0 to refuse.</p>
+            </article>
+            <article class="card card--feature">
+              <span class="card-icon" aria-hidden="true">&#10697;</span>
+              <h3 class="card-title" data-i18n="feat.f4Title">Several signers</h3>
+              <p class="card-body" data-i18n="feat.f4Body">If the document names more than one signer you may use, the bot asks who should sign: one, all, or cancel. Signed PDFs can be signed again.</p>
+            </article>
+            <article class="card card--feature">
+              <span class="card-icon" aria-hidden="true">&#8981;</span>
+              <h3 class="card-title" data-i18n="feat.f5Title">Signature check</h3>
+              <p class="card-body" data-i18n="feat.f5Body">Send the word verify, then a PDF, and the bot reports its signatures without signing anything.</p>
+            </article>
+            <article class="card card--feature">
+              <span class="card-icon" aria-hidden="true">&#10063;</span>
+              <h3 class="card-title" data-i18n="feat.f6Title">Word documents</h3>
+              <p class="card-body" data-i18n="feat.f6Body">DOCX files are converted to PDF before signing. If a document uses other fonts, copy them into config/fonts and restart.</p>
+            </article>
+            <article class="card card--feature">
+              <span class="card-icon" aria-hidden="true">&#9201;</span>
+              <h3 class="card-title" data-i18n="feat.f7Title">Timestamp and trust roots</h3>
+              <p class="card-body" data-i18n="feat.f7Body">Optional RFC 3161 timestamp, and validation of the signer's chain and revocation status against the root certificates you choose.</p>
+            </article>
+            <article class="card card--feature">
+              <span class="card-icon" aria-hidden="true">&#9680;</span>
+              <h3 class="card-title" data-i18n="feat.f8Title">Local AI, optional</h3>
+              <p class="card-body" data-i18n="feat.f8Body">A small vision model running on your computer, through Ollama, can find signature places in forms and scanned pages.</p>
+            </article>
+            <article class="card card--feature">
+              <span class="card-icon" aria-hidden="true">&#8644;</span>
+              <h3 class="card-title" data-i18n="feat.f9Title">English and Portuguese</h3>
+              <p class="card-body" data-i18n="feat.f9Body">Every chat message exists in English and Brazilian Portuguese, chosen per contact.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Safety -->
+      <section class="section section--dark" id="safety" aria-labelledby="safety-title">
+        <div class="container">
+          <p class="eyebrow eyebrow--accent" data-i18n="safe.eyebrow">Safety</p>
+          <h2 class="section-title" id="safety-title" data-i18n="safe.title">Built to refuse when in doubt</h2>
+          <p class="section-lead" data-i18n="safe.lead">A wrong signature is worse than no signature. These rules hold everywhere in the code, and the tests cover the ambiguous cases.</p>
+
+          <dl class="metrics">
+            <div class="metric">
+              <dt class="metric-value">1</dt>
+              <dd class="metric-label" data-i18n="safe.m1">PIN attempt before the bot stops, to protect the token</dd>
+            </div>
+            <div class="metric">
+              <dt class="metric-value">5 min</dt>
+              <dd class="metric-label" data-i18n="safe.m2">for a question or an approval to be answered</dd>
+            </div>
+            <div class="metric">
+              <dt class="metric-value">20</dt>
+              <dd class="metric-label" data-i18n="safe.m3">documents per number per hour, by default</dd>
+            </div>
+            <div class="metric">
+              <dt class="metric-value" data-i18n="safe.m4v">30 days</dt>
+              <dd class="metric-label" data-i18n="safe.m4">of daily reminders before a certificate expires</dd>
+            </div>
+          </dl>
+
+          <div class="grid grid-3">
+            <article class="card card--dark">
+              <h3 class="card-title" data-i18n="safe.c1Title">Ambiguity means no signature</h3>
+              <p class="card-body" data-i18n="safe.c1Body">If the place to sign is unclear, or a name could belong to two signers, nothing is signed for that signer.</p>
+            </article>
+            <article class="card card--dark">
+              <h3 class="card-title" data-i18n="safe.c2Title">Approvals are narrow</h3>
+              <p class="card-body" data-i18n="safe.c2Body">An approval covers the exact document that was sent, comes from the owner's number, is used once and expires.</p>
+            </article>
+            <article class="card card--dark">
+              <h3 class="card-title" data-i18n="safe.c3Title">Secrets stay in one file</h3>
+              <p class="card-body" data-i18n="safe.c3Body">Passwords and PINs live only in the configuration file. A certificate sent through the chat is refused without being opened.</p>
+            </article>
+            <article class="card card--dark">
+              <h3 class="card-title" data-i18n="safe.c4Title">Logs without people</h3>
+              <p class="card-body" data-i18n="safe.c4Body">Operational logs carry no phone numbers, names, file names or document content.</p>
+            </article>
+            <article class="card card--dark">
+              <h3 class="card-title" data-i18n="safe.c5Title">A PIN is tried once</h3>
+              <p class="card-body" data-i18n="safe.c5Body">After a refusal, a guard file blocks every new login, even after a restart, until you run token-retry.</p>
+            </article>
+            <article class="card card--dark">
+              <h3 class="card-title" data-i18n="safe.c6Title">A locked-down container</h3>
+              <p class="card-body" data-i18n="safe.c6Body">Read-only file system, every Linux capability dropped, no privilege escalation, and the configuration folder mounted read-only.</p>
+            </article>
+          </div>
+
+          <details class="limits">
+            <summary data-i18n="safe.limitsTitle">What a signature proves, and what it does not</summary>
+            <ul>
+              <li data-i18n="safe.l1">A signature proves that the document was signed with that certificate and was not changed afterwards.</li>
+              <li data-i18n="safe.l2">Whether the certificate authority is trusted is checked only when trust roots are configured.</li>
+              <li data-i18n="safe.l3">Numbers that are not in the contacts are ignored. Only the people you register can talk to the bot.</li>
+              <li data-i18n="safe.l4">Whapi and Cloudflare carry the messages, so documents pass through them on the way in and out. Certificates and passwords never do.</li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- Using it -->
+      <section class="section" id="use" aria-labelledby="use-title">
+        <div class="container">
+          <p class="eyebrow eyebrow--accent" data-i18n="use.eyebrow">Using it</p>
+          <h2 class="section-title" id="use-title" data-i18n="use.title">Write the name, send the file</h2>
+          <p class="section-lead" data-i18n="use.lead">For the bot to find where to sign, the document needs the signer's full name next to an empty signature line.</p>
+
+          <div class="use-split">
+            <div class="paper">
+              <div class="doc-line doc-line--title"></div>
+              <div class="doc-line"></div>
+              <div class="doc-line doc-line--short"></div>
+              <div class="sigline">José Gonçalves</div>
+              <p class="paper-note" data-i18n="use.note">José Gonçalves, Jose Goncalves and JOSE GONCALVES are the same name for the bot, so a document typed without accents is signed just the same.</p>
+            </div>
+
+            <div class="table-wrap">
+              <table class="cmd">
+                <thead>
+                  <tr>
+                    <th scope="col" data-i18n="use.colSend">You send</th>
+                    <th scope="col" data-i18n="use.colDoes">The bot does</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" data-i18n="use.r1a">A PDF or Word document</th>
+                    <td data-i18n="use.r1b">Signs it and sends it back.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>1</code>, <code>2</code>, <code>0</code>, <code>sim</code>, <code>não</code>, <code>todos</code></th>
+                    <td data-i18n="use.r2b">Takes it as your answer to the question it just asked.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>verify</code> · <code>verificar</code></th>
+                    <td data-i18n="use.r3b">Waits for a PDF and checks its signatures, without signing.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>help</code> · <code>ajuda</code></th>
+                    <td data-i18n="use.r4b">Explains how to use it.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>BOTM4</code></th>
+                    <td data-i18n="use.r5b">Answers Hello, to show it is working.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick start -->
+      <section class="section section--alt" id="start" aria-labelledby="start-title">
+        <div class="container">
+          <p class="eyebrow eyebrow--accent" data-i18n="start.eyebrow">Quick start</p>
+          <h2 class="section-title" id="start-title" data-i18n="start.title">Set it up in five steps</h2>
+          <p class="section-lead" data-i18n="start.lead">The bot runs as a Docker container. Before you begin, have these four things at hand:</p>
+          <ul class="needs">
+            <li data-i18n="start.need1">Docker Desktop, or Docker with Compose</li>
+            <li data-i18n="start.need2">A Whapi.Cloud channel</li>
+            <li data-i18n="start.need3">A domain on Cloudflare</li>
+            <li data-i18n="start.need4">A .p12/.pfx file or a USB token</li>
+          </ul>
+
+          <ol class="steps">
+            <li class="step">
+              <h3 class="step-title"><span class="step-num">1</span><span data-i18n="start.s1Title">Download the project</span></h3>
+              <p class="step-body" data-i18n="start.s1Body">Clone the repository, or download it as a ZIP file and unzip it. Run every command below from the project folder.</p>
+              <div class="code-block">
+                <pre class="code" id="code-clone"><code>git clone https://github.com/mauricioeluri/sealwharf.git
+cd sealwharf</code></pre>
+                <button type="button" class="copy-btn" data-copy-target="#code-clone" data-i18n="start.copy">Copy</button>
+              </div>
+            </li>
+            <li class="step">
+              <h3 class="step-title"><span class="step-num">2</span><span data-i18n="start.s2Title">Create the bot's address</span></h3>
+              <p class="step-body" data-i18n="start.s2Body">In the Cloudflare dashboard, open Networking, then Tunnels, and create a tunnel. Do not install anything: copy only the long token that starts with eyJ, and keep the page open.</p>
+            </li>
+            <li class="step">
+              <h3 class="step-title"><span class="step-num">3</span><span data-i18n="start.s3Title">Get the WhatsApp token</span></h3>
+              <p class="step-body" data-i18n="start.s3Body">In the Whapi dashboard, open your channel, which must be connected (QR code scanned), and copy its API token.</p>
+            </li>
+            <li class="step">
+              <h3 class="step-title"><span class="step-num">4</span><span data-i18n="start.s4Title">Fill in the configuration</span></h3>
+              <p class="step-body" data-i18n="start.s4Body">Copy your certificate into config/certificates, then copy config/sealwharf.example.yaml to config/sealwharf.yaml. This is the smallest working file:</p>
+              <div class="code-block">
+                <pre class="code" id="code-config"><code>public_url: https://bot.example.com
+whapi_token: "the token from step 3"
+tunnel_token: "the token from step 2"
+
+contacts:
+  john:
+    name: John Doe
+    number: "5511999999999"
+
+certificates:
+  - id: john
+    name: John Doe
+    file: certificates/john.p12
+    password: "the certificate password"
+    owner: john</code></pre>
+                <button type="button" class="copy-btn" data-copy-target="#code-config" data-i18n="start.copy">Copy</button>
+              </div>
+            </li>
+            <li class="step">
+              <h3 class="step-title"><span class="step-num">5</span><span data-i18n="start.s5Title">Check, start and publish</span></h3>
+              <p class="step-body" data-i18n="start.s5Body">The check opens every certificate, tests the WhatsApp token and tells you exactly what to fix. When it ends with Ready to start., start the bot.</p>
+              <div class="code-block">
+                <pre class="code" id="code-run"><code>docker compose run --rm sealwharf check
+docker compose up -d</code></pre>
+                <button type="button" class="copy-btn" data-copy-target="#code-run" data-i18n="start.copy">Copy</button>
+              </div>
+              <p class="step-body step-body--after" data-i18n="start.s5After">Back in Cloudflare, add a published application route from your address to http://localhost:8000. A minute later, send BOTM4 to the bot: it answers Hello.</p>
+            </li>
+          </ol>
+
+          <p class="docs-note">
+            <span data-i18n="start.docs">USB tokens, roles, advanced settings and troubleshooting are covered step by step in the guide.</span>
+            <a href="https://github.com/mauricioeluri/sealwharf#readme" target="_blank" rel="noopener" data-i18n="start.docsLink">Read the full guide</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <p class="footer-brand"><img src="assets/img/logo.webp" alt="" width="34" height="34" loading="lazy" />Sealwharf</p>
+            <p class="footer-tag" data-i18n="foot.tag">Sign documents through WhatsApp, on your own computer.</p>
+          </div>
+          <div>
+            <h2 class="footer-head" data-i18n="foot.project">Project</h2>
+            <ul class="footer-links">
+              <li><a href="https://github.com/mauricioeluri/sealwharf" target="_blank" rel="noopener" data-i18n="foot.source">Source code</a></li>
+              <li><a href="https://github.com/mauricioeluri/sealwharf#readme" target="_blank" rel="noopener" data-i18n="foot.guide">User guide</a></li>
+              <li><a href="https://github.com/mauricioeluri/sealwharf/blob/main/config/sealwharf.example.yaml" target="_blank" rel="noopener" data-i18n="foot.example">Configuration example</a></li>
+              <li><a href="https://github.com/mauricioeluri/sealwharf/issues" target="_blank" rel="noopener" data-i18n="foot.issues">Report a problem</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="footer-head" data-i18n="foot.page">On this page</h2>
+            <ul class="footer-links">
+              <li><a href="#how" data-i18n="nav.how">How it works</a></li>
+              <li><a href="#roles" data-i18n="nav.roles">Roles</a></li>
+              <li><a href="#safety" data-i18n="nav.safety">Safety</a></li>
+              <li><a href="#start" data-i18n="nav.start">Quick start</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p data-i18n="foot.built">Built with Python, pyHanko and Docker.</p>
+          <p>© 2026 Maurício El Uri</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
