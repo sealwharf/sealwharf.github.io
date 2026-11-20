@@ -149,11 +149,11 @@
           <div class="m-reveal">
             <h2 class="claim-title" id="claim-title" data-i18n="claim.title">Your certificate stays home. Only the messages travel.</h2>
             <p class="claim-body" data-i18n="claim.body">
-              Signing portals ask you to upload the document, and sometimes the certificate. Sealwharf turns this around: the signing happens in a container on your computer, and WhatsApp is only the way documents come in and go out. Whapi carries the messages and a Cloudflare tunnel gives the bot a fixed address; neither of them ever sees a certificate or a password.
+              Signing portals ask you to upload the document, and sometimes the certificate. Sealwharf turns this around: the signing happens in a container on your computer, and WhatsApp is only the way documents come in and go out. A WhatsApp gateway carries the messages and a Cloudflare tunnel gives the bot a fixed address; neither of them ever sees a certificate or a password.
             </p>
           </div>
 
-          <figure class="m-route m-reveal" role="img" aria-label="Message path: your phone, Whapi.Cloud and a Cloudflare tunnel carry the messages; the certificates and the signing stay on your computer." data-i18n="route.label" data-i18n-attr="aria-label">
+          <figure class="m-route m-reveal" role="img" aria-label="Message path: your phone, a WhatsApp gateway and a Cloudflare tunnel carry the messages; the certificates and the signing stay on your computer." data-i18n="route.label" data-i18n-attr="aria-label">
             <div class="m-transit">
               <span class="m-tag" data-i18n="route.transit">in transit only</span>
               <div class="m-node">
@@ -163,7 +163,7 @@
               <div class="m-wire"><i></i></div>
               <div class="m-node">
                 <svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z" /></svg>
-                <b>Whapi</b><small data-i18n="route.gateway">messages</small>
+                <b>Gateway</b><small data-i18n="route.gateway">messages</small>
               </div>
               <div class="m-wire"><i></i></div>
               <div class="m-node">
@@ -297,8 +297,8 @@
                 <dd data-i18n="gloss.d3">The standard interface that programs use to talk to USB tokens and smart cards. Each vendor ships a library for it.</dd>
               </div>
               <div>
-                <dt>Whapi.Cloud</dt>
-                <dd data-i18n="gloss.d4">A service that connects a WhatsApp number to a program through an API. Sealwharf uses it to receive and send messages.</dd>
+                <dt>Gateway</dt>
+                <dd data-i18n="gloss.d4">A service that connects a WhatsApp number to a program through an API. Sealwharf works with Whapi.Cloud, which is hosted for you, and with WAHA, which is free and runs on your computer.</dd>
               </div>
               <div>
                 <dt>Cloudflare Tunnel</dt>
@@ -460,7 +460,7 @@ certificates:
               <li data-i18n="safe.l1">A signature proves that the document was signed with that certificate and was not changed afterwards.</li>
               <li data-i18n="safe.l2">Whether the certificate authority is trusted is checked only when trust roots are configured.</li>
               <li data-i18n="safe.l3">Numbers that are not in the contacts are ignored. Only the people you register can talk to the bot.</li>
-              <li data-i18n="safe.l4">Whapi and Cloudflare carry the messages, so documents pass through them on the way in and out. Certificates and passwords never do.</li>
+              <li data-i18n="safe.l4">The gateway and Cloudflare carry the messages, so documents pass through them on the way in and out. Certificates and passwords never do.</li>
             </ul>
           </details>
         </div>
@@ -543,7 +543,7 @@ certificates:
           <p class="section-lead" data-i18n="start.lead">The bot runs as a Docker container. Before you begin, have these four things at hand:</p>
           <ul class="needs">
             <li data-i18n="start.need1">Docker Desktop, or Docker with Compose</li>
-            <li data-i18n="start.need2">A Whapi.Cloud channel</li>
+            <li data-i18n="start.need2">A WhatsApp gateway: Whapi.Cloud or WAHA</li>
             <li data-i18n="start.need3">A domain on Cloudflare</li>
             <li data-i18n="start.need4">A .p12/.pfx file or a USB token</li>
           </ul>
@@ -569,7 +569,7 @@ cd sealwharf</code></pre>
               <p class="step-body" data-i18n="start.s4Body">Copy your certificate into config/certificates, then copy config/sealwharf.example.yaml to config/sealwharf.yaml. This is the smallest working file:</p>
               <div class="code-block">
                 <pre class="code" id="code-config"><code>public_url: https://bot.example.com
-whapi_token: "the token from step 3"
+gateway_token: "the token from step 3"
 tunnel_token: "the token from step 2"
 
 contacts:

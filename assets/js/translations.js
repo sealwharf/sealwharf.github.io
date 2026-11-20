@@ -34,7 +34,7 @@ window.SEALWHARF_TRANSLATIONS = {
 
     "claim.title": "Seu certificado fica em casa. Só as mensagens viajam.",
     "claim.body":
-      "Os portais de assinatura pedem que você envie o documento e, às vezes, o próprio certificado. O Sealwharf inverte essa lógica: a assinatura acontece em um contêiner no seu computador, e o WhatsApp é apenas o caminho por onde os documentos entram e saem. O Whapi transporta as mensagens e um túnel da Cloudflare dá ao robô um endereço fixo; nenhum dos dois vê um certificado ou uma senha.",
+      "Os portais de assinatura pedem que você envie o documento e, às vezes, o próprio certificado. O Sealwharf inverte essa lógica: a assinatura acontece em um contêiner no seu computador, e o WhatsApp é apenas o caminho por onde os documentos entram e saem. Um gateway de WhatsApp transporta as mensagens e um túnel da Cloudflare dá ao robô um endereço fixo; nenhum dos dois vê um certificado ou uma senha.",
 
     "about.title": "Uma mesa de assinaturas dentro da sua conversa",
     "about.case1Title": "Profissionais que assinam todo dia",
@@ -71,7 +71,7 @@ window.SEALWHARF_TRANSLATIONS = {
       "Uma identidade eletrônica emitida por uma autoridade certificadora, como um ICP-Brasil A1 (arquivo .p12 ou .pfx) ou A3 (em token USB ou cartão inteligente).",
     "gloss.d2": "O padrão para assinaturas embutidas em arquivos PDF. Qualquer leitor de PDF que confere assinaturas consegue validá-las.",
     "gloss.d3": "A interface padrão que os programas usam para conversar com tokens USB e cartões inteligentes. Cada fabricante fornece uma biblioteca para ela.",
-    "gloss.d4": "Um serviço que conecta um número de WhatsApp a um programa por meio de uma API. O Sealwharf o usa para receber e enviar mensagens.",
+    "gloss.d4": "Um serviço que conecta um número de WhatsApp a um programa por meio de uma API. O Sealwharf funciona com o Whapi.Cloud, hospedado para você, e com o WAHA, que é gratuito e roda no seu computador.",
     "gloss.d5": "Uma conexão do seu computador até a Cloudflare que dá ao robô um endereço HTTPS público sem abrir portas no seu roteador.",
     "gloss.t6": "Registro de auditoria",
     "gloss.d6":
@@ -112,7 +112,7 @@ window.SEALWHARF_TRANSLATIONS = {
     "safe.l2": "A confiança na autoridade certificadora só é verificada quando há certificados raiz configurados.",
     "safe.l3": "Números que não estão nos contatos são ignorados. Só as pessoas que você cadastrar conseguem falar com o robô.",
     "safe.l4":
-      "O Whapi e a Cloudflare transportam as mensagens, então os documentos passam por eles na ida e na volta. Certificados e senhas, nunca.",
+      "O gateway e a Cloudflare transportam as mensagens, então os documentos passam por eles na ida e na volta. Certificados e senhas, nunca.",
 
     "use.title": "Escreva o nome, envie o arquivo",
     "use.lead": "Para o robô encontrar onde assinar, o documento precisa ter o nome completo do signatário junto a uma linha de assinatura vazia.",
@@ -130,7 +130,7 @@ window.SEALWHARF_TRANSLATIONS = {
     "start.title": "Instale em cinco passos",
     "start.lead": "O robô roda como um contêiner Docker. Antes de começar, tenha à mão estas quatro coisas:",
     "start.need1": "Docker Desktop, ou Docker com Compose",
-    "start.need2": "Um canal no Whapi.Cloud",
+    "start.need2": "Um gateway de WhatsApp: Whapi.Cloud ou WAHA",
     "start.need3": "Um domínio na Cloudflare",
     "start.need4": "Um arquivo .p12/.pfx ou um token USB",
     "start.s1Title": "Baixe o projeto",
@@ -160,7 +160,7 @@ window.SEALWHARF_TRANSLATIONS = {
     "motion.online": "online",
     "motion.typing": "digitando…",
     "route.label":
-      "Caminho das mensagens: seu celular, o Whapi e um túnel da Cloudflare transportam as mensagens; os certificados e a assinatura ficam no seu computador.",
+      "Caminho das mensagens: seu celular, um gateway de WhatsApp e um túnel da Cloudflare transportam as mensagens; os certificados e a assinatura ficam no seu computador.",
     "route.transit": "só de passagem",
     "route.phone": "Seu celular",
     "route.gateway": "mensagens",
@@ -203,7 +203,7 @@ window.SEALWHARF_TRANSLATIONS = {
 
     "claim.title": "Su certificado se queda en casa. Solo viajan los mensajes.",
     "claim.body":
-      "Los portales de firma le piden subir el documento y, a veces, el propio certificado. Sealwharf invierte esa lógica: la firma ocurre en un contenedor en su computadora, y WhatsApp es solo el camino por donde los documentos entran y salen. Whapi transporta los mensajes y un túnel de Cloudflare le da al bot una dirección fija; ninguno de los dos ve un certificado o una contraseña.",
+      "Los portales de firma le piden subir el documento y, a veces, el propio certificado. Sealwharf invierte esa lógica: la firma ocurre en un contenedor en su computadora, y WhatsApp es solo el camino por donde los documentos entran y salen. Un gateway de WhatsApp transporta los mensajes y un túnel de Cloudflare le da al bot una dirección fija; ninguno de los dos ve un certificado o una contraseña.",
 
     "about.title": "Un escritorio de firmas dentro de su chat",
     "about.case1Title": "Profesionales que firman todos los días",
@@ -237,7 +237,7 @@ window.SEALWHARF_TRANSLATIONS = {
       "Una identidad electrónica emitida por una autoridad de certificación, como un ICP-Brasil A1 (archivo .p12 o .pfx) o A3 (en un token USB o tarjeta inteligente).",
     "gloss.d2": "El estándar para firmas incrustadas en archivos PDF. Cualquier lector de PDF que verifique firmas puede validarlas.",
     "gloss.d3": "La interfaz estándar que usan los programas para comunicarse con tokens USB y tarjetas inteligentes. Cada fabricante ofrece una biblioteca para ella.",
-    "gloss.d4": "Un servicio que conecta un número de WhatsApp con un programa mediante una API. Sealwharf lo usa para recibir y enviar mensajes.",
+    "gloss.d4": "Un servicio que conecta un número de WhatsApp con un programa mediante una API. Sealwharf funciona con Whapi.Cloud, alojado para usted, y con WAHA, que es gratuito y se ejecuta en su computadora.",
     "gloss.d5": "Una conexión de su computadora a Cloudflare que le da al bot una dirección HTTPS pública sin abrir puertos en su router.",
     "gloss.t6": "Registro de auditoría",
     "gloss.d6":
@@ -275,7 +275,7 @@ window.SEALWHARF_TRANSLATIONS = {
     "safe.l1": "Una firma prueba que el documento se firmó con ese certificado y no se modificó después.",
     "safe.l2": "La confianza en la autoridad de certificación solo se verifica cuando hay certificados raíz configurados.",
     "safe.l3": "Los números que no están en los contactos se ignoran. Solo las personas que usted registre pueden hablar con el bot.",
-    "safe.l4": "Whapi y Cloudflare transportan los mensajes, así que los documentos pasan por ellos a la ida y a la vuelta. Los certificados y las contraseñas, nunca.",
+    "safe.l4": "El gateway y Cloudflare transportan los mensajes, así que los documentos pasan por ellos a la ida y a la vuelta. Los certificados y las contraseñas, nunca.",
 
     "use.title": "Escriba el nombre, envíe el archivo",
     "use.lead": "Para que el bot encuentre dónde firmar, el documento necesita el nombre completo del firmante junto a una línea de firma vacía.",
@@ -293,7 +293,7 @@ window.SEALWHARF_TRANSLATIONS = {
     "start.title": "Instálelo en cinco pasos",
     "start.lead": "El bot se ejecuta como un contenedor Docker. Antes de empezar, tenga a mano estas cuatro cosas:",
     "start.need1": "Docker Desktop, o Docker con Compose",
-    "start.need2": "Un canal en Whapi.Cloud",
+    "start.need2": "Un gateway de WhatsApp: Whapi.Cloud o WAHA",
     "start.need3": "Un dominio en Cloudflare",
     "start.need4": "Un archivo .p12/.pfx o un token USB",
     "start.s1Title": "Descargue el proyecto",
@@ -323,7 +323,7 @@ window.SEALWHARF_TRANSLATIONS = {
     "motion.online": "en línea",
     "motion.typing": "escribiendo…",
     "route.label":
-      "Camino de los mensajes: su celular, Whapi y un túnel de Cloudflare transportan los mensajes; los certificados y la firma se quedan en su computadora.",
+      "Camino de los mensajes: su celular, un gateway de WhatsApp y un túnel de Cloudflare transportan los mensajes; los certificados y la firma se quedan en su computadora.",
     "route.transit": "solo de paso",
     "route.phone": "Su celular",
     "route.gateway": "mensajes",
