@@ -1,8 +1,8 @@
 /*
  * Sealwharf site translations. English is the text written in index.html;
  * i18n.js reads it from the page, so only Portuguese and Spanish live here.
- * The chat mock-ups use the bot's real messages: the bot speaks English and
- * Brazilian Portuguese only, so the Spanish page shows them in English.
+ * The chat mock-ups use the bot's real messages, which exist in the three
+ * languages (src/sealwharf/locales/ in the bot's repository).
  */
 window.SEALWHARF_TRANSLATIONS = {
   pt: {
@@ -45,11 +45,11 @@ window.SEALWHARF_TRANSLATIONS = {
       "A assistente envia o documento; o titular do certificado o recebe no próprio celular e aprova com 1. Ninguém compartilha senha.",
     "about.case3Title": "Escritórios que precisam de registro",
     "about.case3Body":
-      "Cada assinatura é registrada com o horário, quem pediu, quem aprovou e a impressão digital do documento, em um arquivo que fica com você.",
+      "Cada assinatura é registrada com o horário, quem pediu, o nome do arquivo, quem aprovou e a impressão digital do documento, em um arquivo que fica com você. Cada pessoa lê a sua parte enviando bot log, e o registro é apagado após 90 dias.",
 
     "how.title": "Da mensagem no chat ao PDF assinado",
     "how.tagIn": "Você envia",
-    "how.msgGot": "Recebido! Estou processando o seu documento...",
+    "how.msgGot": "Recebido! Estou processando...",
     "how.msgDone": "Tudo certo! Assinado por: John Doe.",
     "how.tagCore": "Sealwharf, no seu computador",
     "how.chip1": "Recebe o arquivo",
@@ -63,7 +63,7 @@ window.SEALWHARF_TRANSLATIONS = {
     "how.chipsLabel": "Características da assinatura",
     "how.prop2": "Carimbo visível",
     "how.prop3": "Assinaturas anteriores mantidas",
-    "how.cap": "O robô também confere assinaturas sem assinar: envie a palavra verificar e, em seguida, um PDF.",
+    "how.cap": "O robô também confere assinaturas sem assinar: envie um PDF com a legenda verificar.",
 
     "gloss.title": "Termos usados nesta página",
     "gloss.t1": "Certificado digital",
@@ -75,7 +75,7 @@ window.SEALWHARF_TRANSLATIONS = {
     "gloss.d5": "Uma conexão do seu computador até a Cloudflare que dá ao robô um endereço HTTPS público sem abrir portas no seu roteador.",
     "gloss.t6": "Registro de auditoria",
     "gloss.d6":
-      "Um arquivo com uma linha por evento que registra cada assinatura com o horário, quem pediu, quem aprovou e a impressão digital do documento.",
+      "Um arquivo com uma linha por assinatura: o horário, o nome do arquivo, quem pediu, quem aprovou e a impressão digital do documento. Nunca o conteúdo.",
 
     "roles.title": "Quem pode usar um certificado e quando o titular é consultado",
     "roles.r1Title": "Titular",
@@ -94,7 +94,11 @@ window.SEALWHARF_TRANSLATIONS = {
     "feat.f5Title": "Conferência de assinaturas",
     "feat.f7Title": "Carimbo de tempo e raízes confiáveis",
     "feat.f8Title": "IA local, opcional",
-    "feat.f9Title": "Inglês e português",
+    "feat.f9Title": "Inglês, português e espanhol",
+    "feat.f1Title": "Vários documentos de uma vez, um só resumo",
+    "safe.c5Title": "Nenhum documento é guardado depois de assinado",
+    "use.r6b": "Lista os certificados instalados e quando vencem.",
+    "use.r7b": "Lista as assinaturas que você pediu, aprovou ou que usaram o seu certificado. Ninguém vê as dos outros.",
 
     "safe.title": "Feito para recusar na dúvida",
     "safe.lead": "Uma assinatura errada é pior do que nenhuma assinatura. Estas regras valem em todo o código, e os testes cobrem os casos ambíguos.",
@@ -110,7 +114,7 @@ window.SEALWHARF_TRANSLATIONS = {
     "safe.limitsTitle": "O que uma assinatura prova, e o que ela não prova",
     "safe.l1": "Uma assinatura prova que o documento foi assinado com aquele certificado e não foi alterado depois.",
     "safe.l2": "A confiança na autoridade certificadora só é verificada quando há certificados raiz configurados.",
-    "safe.l3": "Números que não estão nos contatos são ignorados. Só as pessoas que você cadastrar conseguem falar com o robô.",
+    "safe.l3": "Números que não estão nos contatos são ignorados. Só as pessoas que você cadastrar conseguem falar com o robô, e as conversas comuns delas também são ignoradas.",
     "safe.l4":
       "O gateway e a Cloudflare transportam as mensagens, então os documentos passam por eles na ida e na volta. Certificados e senhas, nunca.",
 
@@ -123,9 +127,9 @@ window.SEALWHARF_TRANSLATIONS = {
     "use.r1a": "Um documento PDF ou Word",
     "use.r1b": "Assina e devolve.",
     "use.r2b": "Entende como a sua resposta à pergunta que acabou de fazer.",
-    "use.r3b": "Aguarda um PDF e confere as assinaturas dele, sem assinar.",
-    "use.r4b": "Explica como usar.",
-    "use.r5b": "Responde Olá, para mostrar que está funcionando.",
+    "use.r3b": "Escrito como legenda de um PDF: confere as assinaturas dele, sem assinar.",
+    "use.r4b": "Lista tudo o que está nesta tabela, no seu idioma.",
+    "use.r5b": "Responde com uma frase curta e bem-humorada, para mostrar que está funcionando.",
 
     "start.title": "Instale em cinco passos",
     "start.lead": "O robô roda como um contêiner Docker. Antes de começar, tenha à mão estas quatro coisas:",
@@ -213,7 +217,7 @@ window.SEALWHARF_TRANSLATIONS = {
       "La asistente envía el documento; el titular del certificado lo recibe en su propio teléfono y aprueba con 1. Nadie comparte una contraseña.",
     "about.case3Title": "Oficinas que necesitan un registro",
     "about.case3Body":
-      "Cada firma queda registrada con la hora, quién la pidió, quién la aprobó y la huella digital del documento, en un archivo que se queda con usted.",
+      "Cada firma queda registrada con la hora, quién la pidió, el nombre del archivo, quién la aprobó y la huella digital del documento, en un archivo que se queda con usted. Cada persona lee su parte enviando bot log, y el registro se borra a los 90 días.",
 
     "how.title": "Del mensaje en el chat al PDF firmado",
     "how.tagIn": "Usted envía",
@@ -229,7 +233,7 @@ window.SEALWHARF_TRANSLATIONS = {
     "how.chipsLabel": "Características de la firma",
     "how.prop2": "Sello visible",
     "how.prop3": "Firmas anteriores conservadas",
-    "how.cap": "El bot también verifica firmas sin firmar: envíe la palabra verify y luego un PDF.",
+    "how.cap": "El bot también verifica firmas sin firmar: envíe un PDF con la leyenda comprobar.",
 
     "gloss.title": "Términos usados en esta página",
     "gloss.t1": "Certificado digital",
@@ -241,7 +245,7 @@ window.SEALWHARF_TRANSLATIONS = {
     "gloss.d5": "Una conexión de su computadora a Cloudflare que le da al bot una dirección HTTPS pública sin abrir puertos en su router.",
     "gloss.t6": "Registro de auditoría",
     "gloss.d6":
-      "Un archivo con una línea por evento que registra cada firma con la hora, quién la pidió, quién la aprobó y la huella digital del documento.",
+      "Un archivo con una línea por firma: la hora, el nombre del archivo, quién la pidió, quién la aprobó y la huella digital del documento. Nunca el contenido.",
 
     "roles.title": "Quién puede usar un certificado y cuándo se consulta al titular",
     "roles.r1Title": "Titular",
@@ -258,7 +262,16 @@ window.SEALWHARF_TRANSLATIONS = {
     "feat.f5Title": "Verificación de firmas",
     "feat.f7Title": "Sello de tiempo y raíces de confianza",
     "feat.f8Title": "IA local, opcional",
-    "feat.f9Title": "Inglés y portugués",
+    "feat.f9Title": "Inglés, portugués y español",
+    "feat.f1Title": "Varios documentos a la vez, un solo resumen",
+    "safe.c5Title": "Ningún documento se guarda después de firmado",
+    "use.r6b": "Muestra los certificados instalados y cuándo vencen.",
+    "use.r7b": "Muestra las firmas que usted pidió, aprobó o que usaron su certificado. Nadie ve las de los demás.",
+    "how.msgGot": "¡Recibido! Lo estoy procesando...",
+    "how.msgDone": "¡Listo! Firmado por: John Doe.",
+    "roles.msg":
+      "¡Hola! Jane Doe (+55 21 88888-8888) te pide firmar el siguiente documento con tu certificado digital. Responde 1 para aprobar. Responde 0, o simplemente ignora este mensaje, para rechazar.",
+    "roles.approved": "¡Aprobado! El documento fue firmado.",
 
     "safe.title": "Hecho para negarse ante la duda",
     "safe.lead": "Una firma equivocada es peor que ninguna firma. Estas reglas se cumplen en todo el código, y las pruebas cubren los casos ambiguos.",
@@ -274,7 +287,7 @@ window.SEALWHARF_TRANSLATIONS = {
     "safe.limitsTitle": "Lo que prueba una firma, y lo que no",
     "safe.l1": "Una firma prueba que el documento se firmó con ese certificado y no se modificó después.",
     "safe.l2": "La confianza en la autoridad de certificación solo se verifica cuando hay certificados raíz configurados.",
-    "safe.l3": "Los números que no están en los contactos se ignoran. Solo las personas que usted registre pueden hablar con el bot.",
+    "safe.l3": "Los números que no están en los contactos se ignoran. Solo las personas que usted registre pueden hablar con el bot, y sus conversaciones comunes también se ignoran.",
     "safe.l4": "El gateway y Cloudflare transportan los mensajes, así que los documentos pasan por ellos a la ida y a la vuelta. Los certificados y las contraseñas, nunca.",
 
     "use.title": "Escriba el nombre, envíe el archivo",
@@ -286,9 +299,9 @@ window.SEALWHARF_TRANSLATIONS = {
     "use.r1a": "Un documento PDF o Word",
     "use.r1b": "Lo firma y lo devuelve.",
     "use.r2b": "Lo toma como su respuesta a la pregunta que acaba de hacer.",
-    "use.r3b": "Espera un PDF y verifica sus firmas, sin firmar.",
-    "use.r4b": "Explica cómo usarlo.",
-    "use.r5b": "Responde Hello, para mostrar que funciona.",
+    "use.r3b": "Escrito como leyenda de un PDF: verifica sus firmas, sin firmar.",
+    "use.r4b": "Muestra todo lo que está en esta tabla, en su idioma.",
+    "use.r5b": "Responde con una frase corta y divertida, para mostrar que funciona.",
 
     "start.title": "Instálelo en cinco pasos",
     "start.lead": "El bot se ejecuta como un contenedor Docker. Antes de empezar, tenga a mano estas cuatro cosas:",

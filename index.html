@@ -107,7 +107,7 @@
                   </div>
                   <div class="m-msg m-in m-typing" data-step="typing"><i></i><i></i><i></i></div>
                   <div class="m-msg m-in" data-step="got">
-                    <span data-i18n="how.msgGot">Got it! Working on your document...</span>
+                    <span data-i18n="how.msgGot">Got it! Working on it...</span>
                     <time>14:31</time>
                   </div>
                   <div class="m-msg m-in m-typing" data-step="typing"><i></i><i></i><i></i></div>
@@ -208,7 +208,7 @@
             <article class="card a-card a-tone-3 m-reveal">
               <span class="a-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12" /><path d="M9 21v-6h6v6M9 11h6" /></svg></span>
               <h3 class="card-title" data-i18n="about.case3Title">Offices that need a record</h3>
-              <p class="card-body" data-i18n="about.case3Body">Every signature is recorded with the time, who asked, who approved and the fingerprint of the document, in a file that stays with you.</p>
+              <p class="card-body" data-i18n="about.case3Body">Every signature is recorded with the time, the file name, who asked, who approved and the fingerprint of the document. Each person reads their own part by sending bot log, and the record is erased after 90 days.</p>
             </article>
           </div>
         </div>
@@ -229,7 +229,7 @@
                     <span class="bubble-meta">14:31</span>
                   </li>
                   <li class="bubble bubble--in">
-                    <span data-i18n="how.msgGot">Got it! Working on your document...</span>
+                    <span data-i18n="how.msgGot">Got it! Working on it...</span>
                     <span class="bubble-meta">14:31</span>
                   </li>
                   <li class="bubble bubble--in">
@@ -278,7 +278,7 @@
                 </ul>
               </div>
             </div>
-            <figcaption class="flow-cap" data-i18n="how.cap">The bot also checks signatures without signing: send the word verify, then a PDF.</figcaption>
+            <figcaption class="flow-cap" data-i18n="how.cap">The bot also checks signatures without signing: send a PDF with the caption verify.</figcaption>
           </figure>
 
           <details class="glossary">
@@ -306,7 +306,7 @@
               </div>
               <div>
                 <dt data-i18n="gloss.t6">Audit record</dt>
-                <dd data-i18n="gloss.d6">A file with one line per event that records each signature with the time, who asked, who approved and the fingerprint of the document.</dd>
+                <dd data-i18n="gloss.d6">A file with one line per signature: the time, the file name, who asked, who approved and the fingerprint of the document. Never its content.</dd>
               </div>
             </dl>
           </details>
@@ -408,7 +408,11 @@ certificates:
             </article>
             <article class="card card--feature a-feature m-reveal">
               <span class="a-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h11v8H8l-4 3V5z" /><path d="M15 9h5v8l-3-2.5h-6V13" /></svg></span>
-              <h3 class="card-title" data-i18n="feat.f9Title">English and Portuguese</h3>
+              <h3 class="card-title" data-i18n="feat.f9Title">English, Portuguese and Spanish</h3>
+            </article>
+            <article class="card card--feature a-feature m-reveal">
+              <span class="a-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4h10v12H7z" /><path d="M4 8v12h10" /></svg></span>
+              <h3 class="card-title" data-i18n="feat.f1Title">Many documents at once, one summary</h3>
             </article>
           </div>
         </div>
@@ -450,6 +454,9 @@ certificates:
               <h3 class="card-title" data-i18n="safe.c4Title">Logs without people</h3>
             </article>
             <article class="card card--dark a-dark m-reveal">
+              <h3 class="card-title" data-i18n="safe.c5Title">No document is kept after it is signed</h3>
+            </article>
+            <article class="card card--dark a-dark m-reveal">
               <h3 class="card-title" data-i18n="safe.c6Title">A locked-down container</h3>
             </article>
           </div>
@@ -459,7 +466,7 @@ certificates:
             <ul>
               <li data-i18n="safe.l1">A signature proves that the document was signed with that certificate and was not changed afterwards.</li>
               <li data-i18n="safe.l2">Whether the certificate authority is trusted is checked only when trust roots are configured.</li>
-              <li data-i18n="safe.l3">Numbers that are not in the contacts are ignored. Only the people you register can talk to the bot.</li>
+              <li data-i18n="safe.l3">Numbers that are not in the contacts are ignored. Only the people you register can talk to the bot, and their ordinary conversation is ignored too.</li>
               <li data-i18n="safe.l4">The gateway and Cloudflare carry the messages, so documents pass through them on the way in and out. Certificates and passwords never do.</li>
             </ul>
           </details>
@@ -514,20 +521,28 @@ certificates:
                     <td data-i18n="use.r1b">Signs it and sends it back.</td>
                   </tr>
                   <tr>
-                    <th scope="row"><code>1</code>, <code>2</code>, <code>0</code>, <code>sim</code>, <code>não</code>, <code>todos</code></th>
+                    <th scope="row"><code>1</code>, <code>2</code>, <code>0</code>, <code>yes</code>, <code>no</code>, <code>all</code></th>
                     <td data-i18n="use.r2b">Takes it as your answer to the question it just asked.</td>
                   </tr>
                   <tr>
-                    <th scope="row"><code>verify</code> · <code>verificar</code></th>
-                    <td data-i18n="use.r3b">Waits for a PDF and checks its signatures, without signing.</td>
+                    <th scope="row"><code>verify</code> · <code>verificar</code> · <code>comprobar</code></th>
+                    <td data-i18n="use.r3b">Written as the caption of a PDF: checks its signatures, without signing.</td>
                   </tr>
                   <tr>
-                    <th scope="row"><code>help</code> · <code>ajuda</code></th>
-                    <td data-i18n="use.r4b">Explains how to use it.</td>
+                    <th scope="row"><code>wake up bot</code> · <code>acorda bot</code> · <code>despierta bot</code></th>
+                    <td data-i18n="use.r5b">Answers with a short, playful line, to show it is working.</td>
                   </tr>
                   <tr>
-                    <th scope="row"><code>BOTM4</code></th>
-                    <td data-i18n="use.r5b">Answers Hello, to show it is working.</td>
+                    <th scope="row"><code>bot status</code></th>
+                    <td data-i18n="use.r6b">Lists the installed certificates and when they expire.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>bot log</code> · <code>bot log 30d</code></th>
+                    <td data-i18n="use.r7b">Lists the signatures you asked for, approved, or that used your certificate. Nobody sees those of other people.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>bot help</code></th>
+                    <td data-i18n="use.r4b">Lists everything on this table, in your language.</td>
                   </tr>
                 </tbody>
               </table>
